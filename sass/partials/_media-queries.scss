@@ -35,7 +35,7 @@
 }
 
 @media screen and (max-width: 1400px) {
-	
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -80,10 +80,10 @@
 
 /* --- iPad --------------------------------------------------------------------------------------------------------- */
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
 }
 
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) {
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
 }
 
 /* --- iPhone 4(S) retina ------------------------------------------------------------------------------------------- */
@@ -139,7 +139,6 @@
 	@page {
 		margin: 0.5cm;
 	}
-
 	p, h2, h3 {
 		orphans: 3;
 		widows: 3;
@@ -151,7 +150,7 @@
 }
 
 @media screen and (max-width: 420px) {
-	
+
 }
 
 @media screen and (max-width: 800px) {
@@ -192,6 +191,7 @@
 			margin-left: 0;
 			margin-right: 0;
 			padding-right: $container-lateral-padding;
+			padding-left: $container-lateral-padding;
 		}
 	}
 

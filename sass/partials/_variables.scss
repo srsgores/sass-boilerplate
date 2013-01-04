@@ -30,14 +30,15 @@ $borderRadiusLarge: $borderRadius * 1.25;
 /* Transitions*/
 $transitionTime: 0.5s;
 
-
 /* =============================================================================
 Colours
 ========================================================================== */
 $textColour: #000;
-$primaryColour: $textColour; //colour of text and main colour overall
+$primaryColour: $textColour;
+//colour of text and main colour overall
 $secondaryColour: #DDD;
-$tertiaryColour: #CCC; //background colour.  Should be the opposite of primary colour for good results
+$tertiaryColour: #CCC;
+//background colour.  Should be the opposite of primary colour for good results
 $bodyBackground: #FFF;
 
 /* =============================================================================
