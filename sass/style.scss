@@ -9,9 +9,14 @@
 body {
 	color: $textColour;
 	background: $bodyBackground;
+	line-height: $lineHeight;
+	font-family: $baseFontFamily;
 }
 
 /* Type */
+h1, h2, h3, h4, h5, h6 {
+	font-weight: $headingFontWeight;
+}
 @for $i from 1 through 6 {
 	h#{$i} {
 		font-size: (($em * $multiplierLarge) - (($i * (($em * $multiplierLarge) / 6 )))) + ($em * $multiplier);
@@ -100,7 +105,7 @@ body {
 	@include box-sizing(border-box);
 	padding: $padding;
 	border: $border;
-	@include box-shadow($shadow);
+	//@include box-shadow($shadow);
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video {

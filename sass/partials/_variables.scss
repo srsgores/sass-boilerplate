@@ -18,10 +18,13 @@ $marginLarge: $margin * $multiplier;
 
 /*Type*/
 $baseFontSize: 16px;
+$baseFontFamily: "Open Sans", "sans-serif", "arial";
 $fontSizeSmall: 85%;
 $fontSizeMedium: 90%;
 $lineHeight: 1.4;
 $em: 1em;
+$headingFontWeight: 300;
+$baseFontWeight: 500;
 
 $borderRadius: ($margin / $multiplierLarge);
 $borderRadiusSmall: $borderRadius * 0.75;
@@ -50,11 +53,11 @@ $shadow: 0 0 $marginLarge $textColour;
 Buttons
 ========================================================================== */
 $buttonPrimaryColour: #CCC;
-$buttonSecondaryColour: darken($buttonPrimaryColour, $multiplierLargePercentage);
+$buttonSecondaryColour: lighten($buttonPrimaryColour, $multiplierLargePercentage);
 
 /* =============================================================================
 Borders
 ========================================================================== */
 $borderStyle: 1px solid;
-$borderColour: lighten($textColour, $multiplierLargePercentage);
+$borderColour: lighten($textColour, 40%);
 $border: $borderStyle $borderColour;

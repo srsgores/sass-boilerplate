@@ -1959,43 +1959,50 @@ Icomoon styles
 body {
   color: black;
   background: white;
+  line-height: 1.4;
+  font-family: "Open Sans", "sans-serif", "arial";
 }
 
 /* Type */
-/* line 16, ../sass/style.scss */
+/* line 17, ../sass/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* line 21, ../sass/style.scss */
 h1 {
   font-size: 3.575em;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 h2 {
   font-size: 3.12em;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 h3 {
   font-size: 2.665em;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 h4 {
   font-size: 2.21em;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 h5 {
   font-size: 1.755em;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
 h6 {
   font-size: 1.3em;
 }
 
-/* line 20, ../sass/style.scss */
+/* line 25, ../sass/style.scss */
 .button, button, .btn, input[type="submit"], a.submit {
   background: #cccccc;
-  border: 1px solid #464646;
+  border: 1px solid #666666;
   cursor: pointer;
   font-size: 90%;
   font-weight: 400;
@@ -2017,7 +2024,7 @@ h6 {
   -o-border-radius: 0.45788em;
   border-radius: 0.45788em;
 }
-/* line 38, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .button:hover, .button:focus, .button.loading, button:hover, button:focus, button.loading, .btn:hover, .btn:focus, .btn.loading, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"].loading, a.submit:hover, a.submit:focus, a.submit.loading {
   background: #2F5163;
   border-color: #333;
@@ -2032,7 +2039,7 @@ h6 {
   background: -o-linear-gradient(#3f6d86, #2f5163);
   background: linear-gradient(#3f6d86, #2f5163);
 }
-/* line 47, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .button:active, button:active, .btn:active, input[type="submit"]:active, a.submit:active {
   border-color: #000;
   -webkit-box-shadow: inset 0 0 0.45788em black;
@@ -2040,18 +2047,18 @@ h6 {
   box-shadow: inset 0 0 0.45788em black;
 }
 
-/* line 54, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 .actions, .form-actions {
   text-align: center;
-  border-top: 1px solid #464646;
+  border-top: 1px solid #666666;
   background: rgba(217, 217, 217, 0.2);
   padding: 1em 0;
 }
-/* line 60, ../sass/style.scss */
+/* line 65, ../sass/style.scss */
 .actions input, .actions .btn, .actions button, .form-actions input, .form-actions .btn, .form-actions button {
   margin: 0 -1px 0 0;
 }
-/* line 62, ../sass/style.scss */
+/* line 67, ../sass/style.scss */
 .actions input:last-child, .actions .btn:last-child, .actions button:last-child, .form-actions input:last-child, .form-actions .btn:last-child, .form-actions button:last-child {
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
@@ -2060,7 +2067,7 @@ h6 {
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-/* line 66, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 .actions input:first-child, .actions .btn:first-child, .actions button:first-child, .form-actions input:first-child, .form-actions .btn:first-child, .form-actions button:first-child {
   -moz-border-radius-topright: 0;
   -webkit-border-top-right-radius: 0;
@@ -2070,12 +2077,12 @@ h6 {
   border-bottom-right-radius: 0;
 }
 
-/* line 74, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 .toolbar, .btn-group, .actions input {
   position: relative;
   margin: 0;
 }
-/* line 78, ../sass/style.scss */
+/* line 83, ../sass/style.scss */
 .toolbar li, .btn-group li, .actions input li {
   display: -moz-inline-stack;
   display: inline-block;
@@ -2084,7 +2091,7 @@ h6 {
   zoom: 1;
   *display: inline;
 }
-/* line 81, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .toolbar li:first-child a, .btn-group li:first-child a, .actions input li:first-child a {
   -moz-border-radius-topleft: 0.3663em;
   -webkit-border-top-left-radius: 0.3663em;
@@ -2093,7 +2100,7 @@ h6 {
   -webkit-border-bottom-left-radius: 0.3663em;
   border-bottom-left-radius: 0.3663em;
 }
-/* line 85, ../sass/style.scss */
+/* line 90, ../sass/style.scss */
 .toolbar li:last-child a, .btn-group li:last-child a, .actions input li:last-child a {
   -moz-border-radius-topright: 0.3663em;
   -webkit-border-top-right-radius: 0.3663em;
@@ -2102,32 +2109,29 @@ h6 {
   -webkit-border-bottom-right-radius: 0.3663em;
   border-bottom-right-radius: 0.3663em;
 }
-/* line 90, ../sass/style.scss */
+/* line 95, ../sass/style.scss */
 .toolbar li a, .btn-group li a, .actions input li a {
   font-size: 85%;
   font-weight: 400;
   margin-right: -1px;
 }
 
-/* line 98, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .box {
   margin: 1em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 1em;
-  border: 1px solid #464646;
-  -webkit-box-shadow: inset 0 0 0.45788em black;
-  -moz-box-shadow: inset 0 0 0.45788em black;
-  box-shadow: inset 0 0 0.45788em black;
+  border: 1px solid #666666;
 }
 
-/* line 106, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video {
   margin-bottom: 1em;
 }
 
-/* line 110, ../sass/style.scss */
+/* line 115, ../sass/style.scss */
 nav, nav li, .toolbar, .toolbar li, .btn-group {
   display: -moz-inline-stack;
   display: inline-block;
@@ -2136,7 +2140,7 @@ nav, nav li, .toolbar, .toolbar li, .btn-group {
   zoom: 1;
   *display: inline;
 }
-/* line 112, ../sass/style.scss */
+/* line 117, ../sass/style.scss */
 nav input, nav li input, .toolbar input, .toolbar li input, .btn-group input {
   display: -moz-inline-stack;
   display: inline-block;
@@ -2149,7 +2153,7 @@ nav input, nav li input, .toolbar input, .toolbar li input, .btn-group input {
 /* =============================================================================
 Border Radius
 ========================================================================== */
-/* line 120, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 nav, button, .btn, .box, .rounded, pre, code, aside, menu {
   -webkit-border-radius: 0.3663em;
   -moz-border-radius: 0.3663em;
@@ -2161,12 +2165,12 @@ nav, button, .btn, .box, .rounded, pre, code, aside, menu {
 /* =============================================================================
 Borders
 ========================================================================== */
-/* line 128, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 .bordered, .box {
-  border: 1px solid #464646;
+  border: 1px solid #666666;
 }
 
-/* line 132, ../sass/style.scss */
+/* line 137, ../sass/style.scss */
 .border-bottom, legend, header, footer, article, section {
-  border-bottom: 1px solid #464646;
+  border-bottom: 1px solid #666666;
 }
