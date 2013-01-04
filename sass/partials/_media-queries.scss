@@ -1,0 +1,213 @@
+/* ---------------------------------------------------------------------------------------------------------------------
+
+  88888888e.     d8b       88888888e.       d8b       8bc:..  88888    .8888888.    88888  888888888.        d8b
+  888888888b    d888b      888888888b      d888b      888888bb88888   d888888888b   88888  8888888888b      d888b
+  888888888D   d88888b     888888888D     d88888b     8888888888888  C88888888888D  88888  88888888888D    d88888b
+  88888888P   d8888888b    88888888P     d8888888b    8888888888888  C88888888888D  88888  88888888888D   d8888888b
+  888888P    d888888888b   88888888b    d888888888b   8888888888888   d888888888P   88888  8888888888b   d888888888b
+  88888     d88888888888b  888888888b  d88888888888b  8888888888888    '8888888'    88888  888888888'   d88888888888b
+
+------------------------------------------------------------------------------------------------------------------------
+
+    Author: Rafal Bromirski
+    www: http://paranoida.com/
+    blog: http://lab.paranoida.com/
+
+    twitter: http://twitter.com/paranoida
+    dribbble: http://dribbble.com/paranoida
+
+    Licensed under a MIT License
+
+--------------------------------------------------------------------------------------------------------------------- */
+
+/* --- main content ------------------------------------------------------------------------------------------------- */
+@import "variables.scss";
+@import "compass/css3";
+
+/* --- media queries ------------------------------------------------------------------------------------------------ */
+
+@media screen and (max-width: 1920px) {
+
+}
+
+@media screen and (max-width: 1600px) {
+
+}
+
+@media screen and (max-width: 1400px) {
+	
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1024px) {
+	body {
+		font-size: 0.8em;
+		line-height: 1.5em;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 640px) {
+/* to avoid the adjustment of fonts on iOS devices you should keep this line */
+	* {
+		-webkit-text-size-adjust: none;
+		-ms-text-size-adjust: none;
+	}
+}
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 400px) {
+}
+
+@media screen and (max-width: 320px) {
+}
+
+/* --- iPad --------------------------------------------------------------------------------------------------------- */
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:portrait) {
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation:landscape) {
+}
+
+/* --- iPhone 4(S) retina ------------------------------------------------------------------------------------------- */
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+
+}
+
+/* --- iPhone ------------------------------------------------------------------------------------------------------- */
+
+@media screen and (max-device-width: 640px) and (-webkit-device-pixel-ratio: 1), screen and (max-device-width: 640px) and (device-pixel-ratio: 1) {
+}
+
+/* --- print (optional) --------------------------------------------------------------------------------------------- */
+
+@media print {
+	body {
+		background: transparent !important;
+		color: black !important;
+		text-shadow: none !important;
+		filter: none !important;
+		-ms-filter: none !important;
+	}
+/* Black prints faster: sanbeiji.com/archives/953 */
+	a, a:visited {
+		color: #444 !important;
+		text-decoration: underline;
+	}
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+	abbr[title]:after {
+		content: " (" attr(title) ")";
+	}
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+		content: "";
+	}
+/* Don't show links for images, or javascript/internal links */
+	pre, blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+	thead {
+		display: table-header-group;
+	}
+/* css-discuss.incutio.com/wiki/Printing_Tables */
+	tr, img {
+		page-break-inside: avoid;
+	}
+	img {
+		max-width: 100% !important;
+	}
+	@page {
+		margin: 0.5cm;
+	}
+
+	p, h2, h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2, h3 {
+		page-break-after: avoid;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+/* Smaller screens */
+
+@media only screen and (max-width: 1023px) {
+
+}
+
+/* Mobile */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+		font-size: $baseFontSize;
+		-webkit-text-size-adjust: none;
+	}
+
+	.row, body, .container {
+		width: 100%;
+		min-width: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	@for $i from 1 through $num-cols {
+		.row .#{ col-name($i) } {
+			width: auto;
+			float: none;
+			position: static !important;
+			margin-left: 0;
+			margin-right: 0;
+			padding-right: $container-lateral-padding;
+		}
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	header {
+		overflow: visible;
+	}
+	.toolbar, .form-actions, header, footer, caption, menu, figure, figcaption, nav {
+		text-align: center;
+	}
+	textarea, input {
+		width: 98%;
+		min-width: 98%;
+		padding: $borderRadius;
+	}
+}
