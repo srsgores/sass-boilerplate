@@ -87,15 +87,16 @@
 }
 
 @for $i from 1 through ($num-cols - 1) {
-	.row .#{ col-name($i) } {
-		width: $col-unit * $i - $col-margin-right;
+	.row {
+		.#{ col-name($i) } {
+			width: $col-unit * $i - $col-margin-right;
+		}
 	}
 }
 
 .row .#{ col-name($num-cols) } {
 	width: 100%;
 	float: left;
-
 }
 
 .last {
@@ -108,44 +109,4 @@ img, object, embed {
 
 img {
 	height: auto;
-}
-
-/* Smaller screens */
-
-@media only screen and (max-width: 1023px) {
-
-	body {
-		font-size: 0.8em;
-		line-height: 1.5em;
-	}
-
-}
-
-/* Mobile */
-
-@media handheld, only screen and (max-width: 767px) {
-
-	body {
-		font-size: 16px;
-		-webkit-text-size-adjust: none;
-	}
-
-	.row, body, .container {
-		width: 100%;
-		min-width: 0;
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	@for $i from 1 through $num-cols {
-		.row .#{ col-name($i) } {
-			width: auto;
-			float: none;
-			position: static !important;
-			margin-left: 0;
-			margin-right: 0;
-			//padding-left: $container-lateral-padding;
-			padding-right: $container-lateral-padding;
-		}
-	}
 }

@@ -1,3 +1,10 @@
+@import "compass/css3/pie";
+@import "compass/css3";
+
+$pie-behavior: url("/stylesheets/PIE.htc");
+
+$pie-base-class: pie-element;
+
 /*Grid*/
 $num-cols: 12;
 $rowWidth: 100%;

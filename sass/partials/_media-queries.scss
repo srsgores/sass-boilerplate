@@ -44,7 +44,6 @@
 @media screen and (max-width: 1024px) {
 	body {
 		font-size: 0.8em;
-		line-height: 1.5em;
 	}
 }
 
@@ -191,7 +190,7 @@
 			margin-left: 0;
 			margin-right: 0;
 			padding-right: $container-lateral-padding;
-			padding-left: $container-lateral-padding;
+			//padding-left: $container-lateral-padding;
 		}
 	}
 
