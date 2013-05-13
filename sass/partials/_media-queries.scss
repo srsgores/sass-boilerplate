@@ -182,18 +182,19 @@
 		margin-right: 0;
 	}
 
-	@for $i from 1 through $num-cols {
-		.row .#{ col-name($i) } {
-			width: auto;
-			float: none;
-			position: static !important;
-			margin-left: 0;
-			margin-right: 0;
-			padding-right: $container-lateral-padding;
-			//padding-left: $container-lateral-padding;
+	.container {
+		@for $i from 1 through $num-cols {
+			.row {
+				.#{col-name($i)}, .#{col-name($i)}:last-child {
+					width: auto;
+					float: none;
+					position: static !important;
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
 		}
 	}
-
 	img {
 		width: 100%;
 		height: 100%;
