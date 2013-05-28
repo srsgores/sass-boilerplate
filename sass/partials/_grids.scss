@@ -56,15 +56,18 @@ $container-style: fluid;
 	@return $col-name;
 }
 
-.col {
+$rowNotation: row;
+
+%col {
 	min-height: 1px;
+	@extend %transition-all;
 }
 
 @for $i from 1 through ($num-cols) {
 	.#{col-name($i)} {
-		@extend .col;
+		@extend %col;
 	}
-	.row {
+	.#{$rowNotation} {
 		.#{col-name($i)}:last-child {
 			@extend .last !optional;
 			@include span-columns($i omega, $num-cols);
@@ -74,14 +77,13 @@ $container-style: fluid;
 
 .container {
 	@include container;
-	@include box-sizing(border-box);
-	.row {
+	@extend .border-box;
+	.#{$rowNotation} {
 		width: $container-width;
 		margin: 0 auto;
 		overflow: hidden;
-		padding: 0 ($lineHeight/2) * 1em;
-		@include box-sizing(border-box);
-		@include transition($transitionTime all);
+		@extend %padding-none;
+		@extend .border-box;
 
 		&.extended-height {
 			overflow: visible;
@@ -90,7 +92,7 @@ $container-style: fluid;
 }
 
 @for $i from 1 through ($num-cols) {
-	.row {
+	.#{$rowNotation} {
 		.#{col-name($i)} {
 			@if $i == $num-cols {
 				@include span-columns($i omega, $num-cols);
@@ -103,18 +105,5 @@ $container-style: fluid;
 }
 
 .last {
-
-}
-/*.row .#{ col-name($num-cols) } {
-	width: $rowWidth;
-	float: left;
-}*/
-
-img, object, embed {
-	max-width: 100%;
-}
-
-img {
-	height: auto;
-	width: 100%;
+	margin-right: 0 !important;
 }

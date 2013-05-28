@@ -4,14 +4,14 @@
 
 
 .nav, .nav ul {
-	margin: 0;
-	padding: 0;
+	@extend %margin-none;
+	@extend %padding-none;
 	list-style: none;
 }
 
 .nav {
 	background: darken(#2F5163, 15%);
-	border-bottom: 1px solid darken(#2F5163, 15%);
+	border-bottom: $borderWidth $borderStyle darken($borderColour, 15%);
 	overflow: visible;
 	zoom: 1;
 	width: $rowWidth;
@@ -20,10 +20,10 @@
 	ul {
 		list-style: none;
 		@include opacity(0);
-		visibility: hidden;
-		position: absolute;
+		@extend .invisible;
+		@extend %absolute;
 		top: 100%;
-		margin-left: $margin;
+		@extend %normal-margin-left;
 		background: #444;
 		@include transition(opacity $transitionTime ease-in-out);
 
@@ -88,7 +88,7 @@
 					}
 					&:after {
 						content: '';
-						position: absolute;
+						@extend %absolute;
 						left: $marginLarge;
 						top: -$paddingSmall;
 						width: 0;
@@ -118,8 +118,8 @@
 			> ul {
 				display: block;
 				@include opacity(1);
-				visibility: visible;
-				margin: 0;
+				@extend .visible;
+				@extend %margin-none;
 			}
 		}
 	}

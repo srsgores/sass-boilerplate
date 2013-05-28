@@ -1,7 +1,7 @@
 @import "compass/css3/pie";
 @import "compass/css3";
 
-$pie-behavior: url("/stylesheets/PIE.htc");
+$pie-behavior: url("/css/PIE.htc");
 
 $pie-base-class: pie-element;
 
@@ -21,13 +21,16 @@ $padding: 1em;
 $paddingLarge: $padding * $multiplier;
 $paddingSmall: $padding / $multiplier;
 $margin: 1em;
-$marginLarge: $margin * $multiplier;
+$marginLarge: $margin * $multiplierLarge;
 
-/*Type*/
+/* =============================================================================
+Type
+========================================================================== */
 $baseFontSize: 16px;
 $baseFontFamily: "Open Sans", "sans-serif", "arial";
 $fontSizeSmall: 85%;
 $fontSizeMedium: 90%;
+$fontSizeLarge: 250%;
 $lineHeight: 1.4;
 $em: 1em;
 $headingFontWeight: 300;
@@ -39,17 +42,18 @@ $borderRadiusLarge: $borderRadius * 1.25;
 
 /* Transitions*/
 $transitionTime: 0.5s;
-
+$transitionType: linear;
 /* =============================================================================
 Colours
 ========================================================================== */
 $textColour: #000;
 $primaryColour: $textColour;
 //colour of text and main colour overall
-$secondaryColour: #DDD;
-$tertiaryColour: #CCC;
+$secondaryColour: #5d5d5d;
+$tertiaryColour: #cc130f;
 //background colour.  Should be the opposite of primary colour for good results
 $bodyBackground: #FFF;
+$bodyBackgroundImage: none;
 
 /* =============================================================================
 shadow
@@ -65,6 +69,15 @@ $buttonSecondaryColour: lighten($buttonPrimaryColour, $multiplierLargePercentage
 /* =============================================================================
 Borders
 ========================================================================== */
-$borderStyle: 1px solid;
-$borderColour: lighten($textColour, 40%);
-$border: $borderStyle $borderColour;
+$borderWidth: 1px;
+$borderStyle: solid;
+$borderColour: darken($textColour, 40);
+$border: $borderWidth $borderStyle $borderColour;
+
+/* =============================================================================
+Media query variables
+========================================================================== */
+$breakpointMain: (screen) (max-width 767px);
+$queryIphone3: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
+$queryIphone3Portrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
+$queryIphone3Landscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);

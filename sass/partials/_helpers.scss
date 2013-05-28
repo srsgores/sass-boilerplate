@@ -50,6 +50,9 @@
 	visibility: hidden;
 }
 
+.visible {
+	visibility: visible;
+}
 /* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
    nicolasgallagher.com/micro-clearfix-hack/ */
 .clearfix:before,
@@ -86,4 +89,192 @@
 // a z-index of -1.
 .pie-container {
 	@include pie-container;
+}
+
+%margin-none {
+	margin: 0;
+}
+
+%normal-margin {
+	margin: $margin;
+}
+
+%normal-margin-bottom {
+	margin-bottom: $margin;
+}
+
+%normal-margin-right {
+	margin-right: $margin;
+}
+
+%normal-margin-left {
+	margin-left: $margin;
+}
+
+%normal-padding {
+	padding: $padding;
+}
+
+%normal-padding-bottom {
+	padding-bottom: $padding;
+}
+
+%normal-padding-right {
+	padding-right: $padding;
+}
+
+%normal-padding-left {
+	padding-left: $padding;
+}
+
+%padding-none {
+	padding: 0;
+}
+/* =============================================================================
+Border radius
+========================================================================== */
+.rounded {
+	@include border-radius($borderRadius);
+}
+%rounded-left {
+	@include border-top-left-radius($borderRadius);
+	@include border-bottom-left-radius($borderRadius);
+}
+
+%rounded-right {
+	@include border-top-right-radius($borderRadius);
+	@include border-bottom-left-radius($borderRadius);
+}
+
+%rounded-top {
+	@include border-top-left-radius($borderRadius);
+	@include border-top-right-radius($borderRadius);
+}
+
+%rounded-bottom {
+	@include border-bottom-left-radius($borderRadius);
+	@include border-bottom-right-radius($borderRadius);
+}
+
+%rounded-left-none {
+	@include border-top-left-radius(0);
+	@include border-bottom-left-radius(0);
+}
+
+%rounded-left-large {
+	@include border-top-left-radius($borderRadiusLarge);
+	@include border-bottom-left-radius($borderRadiusLarge);
+}
+
+%rounded-right-large {
+	@include border-top-right-radius($borderRadiusLarge);
+	@include border-bottom-left-radius($borderRadiusLarge);
+}
+
+%rounded-top-large {
+	@include border-top-left-radius($borderRadiusLarge);
+	@include border-top-right-radius($borderRadiusLarge);
+}
+
+%rounded-bottom-large {
+	@include border-bottom-left-radius($borderRadiusLarge);
+	@include border-bottom-right-radius($borderRadiusLarge);
+}
+
+%rounded-left-none {
+	@include border-top-left-radius(0);
+	@include border-bottom-left-radius(0);
+}
+
+%rounded-right-none {
+	@include border-top-right-radius(0);
+	@include border-bottom-left-radius(0);
+}
+
+%rounded-top-none {
+	@include border-top-left-radius(0);
+	@include border-top-right-radius(0);
+}
+
+%rounded-bottom-none {
+	@include border-bottom-left-radius(0);
+	@include border-bottom-right-radius(0);
+}
+
+%rounded-large {
+	@include border-radius($borderRadiusLarge);
+}
+.border-box {
+	@include box-sizing(border-box);
+}
+
+%transitioned, %transition-all {
+	@include transition($transitionTime all $transitionType);
+}
+
+/* =============================================================================
+Font Sizes
+========================================================================== */
+.medium {
+	font-size: $fontSizeMedium;
+}
+
+.small {
+	font-size: $fontSizeSmall;
+}
+
+.large {
+	font-size: $fontSizeLarge;
+}
+
+/* =============================================================================
+Opacity/visibility
+========================================================================== */
+.opacity-0 {
+	@include opacity(0);
+}
+
+/* =============================================================================
+Borders
+========================================================================== */
+.bordered {
+	border: $border;
+}
+
+.bordered-right {
+	border-right: $border;
+}
+
+.bordered-left {
+	border-left: $border;
+}
+
+.bordered-top {
+	border-top: $border;
+}
+
+.border-none {
+	border: 0;
+}
+
+.bordered-bottom {
+	border-bottom: $border;
+}
+
+/* =============================================================================
+Floats
+========================================================================== */
+.pull-left, .float-left {
+	float: left;
+}
+.pull-right, .float-right {
+	float: right;
+}
+
+.inline {
+	@include inline-block();
+}
+
+%absolute {
+	position: absolute;
 }
