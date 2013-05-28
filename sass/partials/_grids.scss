@@ -3,15 +3,6 @@
 @import "susy";
 @import "breakpoint";
 
-$container-width: $rowWidth;
-$total-columns: $num-cols;
-$column-width: 4%;
-$gutter-width: 2%;
-$grid-padding: 1%;
-$from-direction: left;
-
-$container-style: fluid;
-
 @function col-name($n) {
 /* Use naming consistent with original 1140x Grid V2 */
 	$col-name: col;
@@ -55,8 +46,6 @@ $container-style: fluid;
 
 	@return $col-name;
 }
-
-$rowNotation: row;
 
 %col {
 	min-height: 1px;

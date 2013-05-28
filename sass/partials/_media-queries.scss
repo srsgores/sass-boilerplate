@@ -106,7 +106,7 @@
 		-webkit-text-size-adjust: none;
 	}
 
-	.row, body, .container {
+	.#{$rowNotation}, body, .container {
 		width: 100%;
 		min-width: 0;
 		margin-left: 0;
@@ -114,8 +114,11 @@
 	}
 
 	.container {
+		.#{$rowNotation} {
+			padding: 0 $padding;
+		}
 		@for $i from 1 through $num-cols {
-			.row {
+			.#{$rowNotation} {
 				.#{col-name($i)}, .#{col-name($i)}:last-child {
 					width: auto;
 					float: none;

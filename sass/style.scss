@@ -117,7 +117,6 @@ a {
 	@extend .border-box;
 	@extend %normal-padding;
 	@extend .bordered;
-	@extend .shadowed;
 	@extend .rounded;
 	@extend %transition-all;
 }
@@ -150,7 +149,7 @@ legend, header, footer, article, section {
 Shadows
 ========================================================================== */
 .shadowed {
-	@include box-shadow($shadow);
+	@include box-shadow(inset 0 0 3em fade-out($textColour, 0.7));
 }
 
 /* =============================================================================
