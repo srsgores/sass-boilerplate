@@ -26,39 +26,19 @@
 	}
 }
 
-.actions, .form-actions {
+.actions, .form-actions, .btn-group, .toolbar {
 	@extend .centred;
 	@extend .bordered-top;
 	background: fade-out($secondaryColour, 0.83);
 	padding: $padding 0;
 	input, .btn, button {
 		margin: 0 -#{$borderRadius} 0 0;
+		@extend %rounded-none;
 		&:last-child {
-			@include border-top-left-radius(0);
-			@include border-bottom-left-radius(0);
-		}
-		&:first-child {
-			@include border-top-right-radius(0);
-			@include border-bottom-right-radius(0);
-		}
-	}
-}
-
-.toolbar, .btn-group, .actions input {
-	position: relative;
-	@extend %margin-none;
-	li {
-		@extend .inline;
-		&:first-child a {
-			@extend %rounded-left;
-		}
-		&:last-child a {
 			@extend %rounded-right;
 		}
-		a {
-			@extend .small;
-			font-weight: $baseFontWeight;
-			margin-right: -$borderRadius;
+		&:first-child {
+			@extend %rounded-left;
 		}
 	}
 }

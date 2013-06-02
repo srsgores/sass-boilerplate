@@ -81,31 +81,650 @@
 		</nav>
 	</header>
 	<div class = "row">
-		<div class = "threecol">
-			<aside class = "sidebar-a box">
-				<h1>Sidebar A</h1>
+		<article id = "content">
+		<section class = "overview">
+			<div class = "centred row">
+				<h1>Introducing SASS&copy; HTML5 Boilerplate</h1>
 
-				<p>
-					This is an <code>aside</code> with the class of <code>sidebar-a</code>.
+				<h2>A simple, intuitive, responsive framework for building next-gen web applications</h2>
+
+				<div class="links">
+					<div class = "row">
+						<iframe
+								src = "http://ghbtns.com/github-btn.html?user=srsgores&repo=sass-boilerplate&type=watch&count=true"
+								allowtransparency = "true" frameborder = "0" scrolling = "0" width = "62" height = "20"></iframe>
+						<iframe
+								src = "http://ghbtns.com/github-btn.html?user=srsgores&repo=sass-boilerplate&type=fork&count=true"
+								allowtransparency = "true" frameborder = "0" scrolling = "0" width = "95" height = "20"></iframe>
+					</div>
+					<div class = "toolbar" id = "social-media-buttons">
+						<a class = "btn" target = "_blank"
+						   href = "http://twitter.com/intent/tweet?url=http://srsgores.github.io/sass-boilerplate/&text=Responsive, intuitive SASS framework @SGoresht"><i class = "icon-twitter"></i>
+							Tweet</a>
+						<a class = "btn" target = "_blank" href = "https://plus.google.com/share?url=http://srsgores.github.io/sass-boilerplate/"><i class = "icon-google-plus">
+						</i> Share</a>
+						<a class = "btn" download = "SASS Boilerplate" href = "https://github.com/srsgores/sass-boilerplate/archive/master.zip" id = "download">Download <i
+								class = "icon-file-download"></i></a>
+					</div>
+
+				</div>
+				</div>
+		</section>
+		<section id = "features">
+			<header class = "centred">
+				<h1>What makes it so great?</h1>
+			</header>
+			<div class = "row">
+				<div class = "fourcol">
+					<div class = "centred">
+						<i class = "icon-plus-3 feature-icon"></i>
+
+						<h2>LESS is More</h2>
+					</div>
+					<p>You get ultimate control over your UI. Start from easy standards,
+						as promoted by the HTML5 boilerplate, gain a native feel on mobile devices with HTML5
+						input types, and use cutting-edge technologies. Engage in responsive design from the
+						outset, watch your designs scale with <code>em</code>s (rather than <code>px</code>s), and
+						do CSS the proper way with an emphasis on grouped selectors.</p>
+				</div>
+				<div class = "fourcol">
+					<div class = "centred">
+						<i class = "icon-droplet feature-icon"></i>
+
+						<h2>Vector FTW</h2>
+					</div>
+					<p>Customize your own icon font using Icomoon. Use up to 300 customizable icons,
+						all in the form of a font that works with all browsers. Import any vectors from
+						Illustrator or Photoshop.</p>
+				</div>
+				<div class = "fourcol">
+					<div class = "centred">
+						<i class = "icon-pencil-2 feature-icon"></i>
+
+						<h2>Customizable</h2>
+					</div>
+
+					<p>Using Twitter's <a href = "http://bower.io/" target = "_blank">Bower</a>, LESS Boilerplate allows you to
+						get your project set up in seconds,
+						while always keeping the libraries you use up to date. Simply install Bower, and do
+						<code>bower install</code>, and you'll be all set up.</p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "fourcol">
+					<div class = "centred">
+						<i class = "icon-grid-view feature-icon"></i>
+
+						<h2>100% Flexible Grid System</h2>
+					</div>
+
+					<p>Built on top of LESS, LESS Boilerplate can meld into any scenario. Using this as your UI
+						Framework, you can modify row counts, columns, column class prefix and suffixes,
+						and even the margins between! Using Bootstrap? LESS Boilerplate can be configured to use
+						the <strong>exact same grid classes as Bootstrap</strong>.</p>
+					<a class = "btn btn-primary show-edit-container" href = "#">Customize
+						Grid <i class = "icon-grid-view"></i></a>
+				</div>
+				<div class = "fourcol">
+					<div class = "centred">
+						<i class = "icon-basket-2 feature-icon"></i>
+
+						<h2>3 Colours to Rule Them All</h2>
+					</div>
+
+					<p>Make customization easy for your users. Using LESS's colour functions,
+						the framework is set to work with three colours: main, secondary, and primary. Of course,
+						you still have the option of hard-coding your colours in... but the framework leaves you
+						with good examples of how to build a dynamic site for your client.</p>
+				</div>
+				<div class = "fourcol">
+					<div class = "centred">
+						<i class = "icon-mobile-2 feature-icon"></i>
+
+						<h2>Responsive</h2>
+					</div>
+
+					<p>Try resizing your browser. LESS Boilerplate is built responsively,
+						with responsive design in mind. Columns fold over, and your site is guaranteed to work on
+						any device</p>
+				</div>
+			</div>
+		</section>
+		<section id = "what-you-get">
+			<header class = "centred">
+				<h1>What You Get</h1>
+			</header>
+			<div class = "row">
+				<div class = "sixcol">
+					<div class = "centred">
+						<i class = "icon-accessibility feature-icon large"></i>
+
+						<h1>ARIA-Compliant Markup</h1>
+					</div>
+					<p>Extend your site's accessibility by using the new ARIA roles so that those with screen
+						readers can better understand the structuring of your site. LESS Boilerplate ships with a
+						default HTML markup with the main ARIA roles: <code>main</code> and <code>nav</code>.</p>
+				</div>
+				<div class = "sixcol last">
+					<div class = "centred">
+						<i class = "icon-html5 feature-icon large"></i>
+
+						<h1>HTML5-Valid
+							<small>boilerplate markup</small>
+						</h1>
+					</div>
+					<p>You can start your next project knowing that the markup and default styles used in LESS
+						boilerplate are HTML5-valid. Instead of styling for older browsers (like Bootstrap),
+						we style using the recommended W3C recommendations. Older browsers fall back using
+						Modernizr or the HTML5 shim.</p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "sixcol">
+					<div class = "centred">
+						<i class = "icon-css3 feature-icon large"></i>
+
+						<h1>Grouped Selectors</h1>
+					</div>
+					<p>The problem with engines like SASS (or SCSS) is that they tend to encourage lazy developers
+						to use directives like <code>@extend</code>. But what happens after a while is that you
+						lose track of what styles are applied to what selectors, as the combined selector becomes
+						<em>extended</em>. LESS Boilerplate solves this issue by putting selectors together,
+						so that you can <em>visualize</em> the result. It also encourages best practices:</p>
+					<pre class = "language-css"><code>
+						/* =============================================================================
+						Border Radius
+						========================================================================== */
+						nav, button, .btn, .box, .rounded, pre, code, aside, menu, .nav, .menu li {
+						.border-radius(@borderRadius); //all selectors combined. We know what's going on!
+						}
+					</code></pre>
+				</div>
+				<div class = "sixcol last">
+					<div class = "centred">
+						<i class = "icon-chrome feature-icon large"></i>
+					</div>
+					<p>LESS Boilerplate is designed with UX in mind. Using HTML5 elements like the
+						<code>noscript</code> tag, ensure your users have javascript-enabled browsers. Using
+						<strong>loader.js</strong>, you ensure your app doesn't get an <em>breaking</em> feel
+						when non-javascript-enabled browsers try to access your site.</p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class = "centred">
+					<i class = "icon-Icomoon large"></i>
+
+					<h1>Icomoon Icons
+						<small>the clean way</small>
+					</h1>
+				</div>
+				<p>Using a new icon technique, you can avoid all the icky <code>content</code> values in your CSS
+					by using the ready-to-use <code>icomoon.less</code> file, with all icons as variables. This
+					makes your code much more readible and maintainable!</p>
+
+				<div class = "row">
+					<div class = "sixcol">
+						<header class = "centred">
+							<h3>Code <i class = "icon-css3"></i></h3>
+						</header>
+				<pre class = "language-css"><code>
+					//example module
+					.module {
+					position: relative;
+					.box;
+					&.feature-star {
+					&:after {
+					position: absolute;
+					font-family: "icomoon";
+					content: @icon-star-2;
+					font-size: @fontSizeLarge;
+					color: spin(@textColour, 40);
+					#transition > .transition(all @transition-time ease);
+					text-shadow: 0 0 @borderRadius spin(lighten(@textColour, 40), 40%);
+					}
+					&:hover {
+					&:after {
+					font-size: (@fontSizeLarge * @multiplier);
+					#transform > .rotate(-90deg);
+					content: @icon-star;
+					}
+					}
+					}
+				</code></pre>
+					</div>
+					<div class = "sixcol last">
+						<header class = "centred"><h3>Result</h3></header>
+						<aside class = "module feature-star">
+							<header><h3>Feature Star Module</h3></header>
+							<p>Content goes here.</p>
+						</aside>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id = "installation">
+			<header class = "centred">
+				<h1>Installation</h1>
+
+				<h2>Get Set Up in a Giffy</h2>
+			</header>
+			<div class = "row">
+				<p>Setting up is easy. Simply <a href = "#download">download the files</a> to your local
+					computer, do a <code>bower install</code>, and you'll be good to go!</p>
+
+				<p>In order to get configuring LESS Boilerplate on your local machine, you will need one of two things:</p>
+
+				<ol>
+					<li>Chrome (or Chrome Canary) with the <code>--file-access-from-files</code> flag set to true.</li>
+					<li>A server like AMPPS</li>
+				</ol>
+
+				<h3>Windows</h3>
+
+				<p>To set this up on Chrome on Windows, right-click on your shortcut to Chrome, navigate to the Shortcut Tab,
+					and on the shortcut area, append <code>--allow-file-access-from-files</code> to the link. Restart Chrome.
 				</p>
-			</aside>
-		</div>
-		<div class = "sixcol">
-			<article role = "main" id = "content">
-				<h1>Hello world!</h1>
+				<a href = "https://a248.e.akamai.net/camo.github.com/7dc0cd28d71f82c57bfcda12d28b2c31c69b8ea7/687474703a2f2f7365616e676f72657368742e636f6d2f696d616765732f66696c652d6163636573732d66726f6d2d66696c65732d6368726f6d652e706e67" target = "_blank"><img src = "https://a248.e.akamai.net/camo.github.com/7dc0cd28d71f82c57bfcda12d28b2c31c69b8ea7/687474703a2f2f7365616e676f72657368742e636f6d2f696d616765732f66696c652d6163636573732d66726f6d2d66696c65732d6368726f6d652e706e67" alt = "Chrome - Allowing File Access from Files on Windows" title = "Chrome - Allowing File Access from Files on Windows"></a>
 
-				<p>This is HTML5 Boilerplate.</p>
-			</article>
-		</div>
-		<div class = "threecol last">
-			<aside class = "sidebar-b box">
-				<h1>Sidebar B</h1>
+				<h3>Mac/Unix</h3>
 
-				<p>
-					This is an <code>aside</code> with the class of <code>sidebar-b</code>.
-				</p>
+				<p>To get the file-access-from files flag working on Chrome for Mac or unix-based operating systems, open a
+					terminal,
+					and type the following:</p>
+
+<pre><code>chromium --allow-file-access-from-files
+</code></pre>
+
+
+				<p>Make sure that you have restarted Chrome.</p>
+
+				<h2>Contributing</h2>
+
+				<p>If you have some time on your hands, please message me. I need to find more people to work on this,
+					and I am currently not able to put in as much effort as I'd like to on this amazing project. Your pull
+					requests will
+					be recognized immediately. If you have an idea, please make a new issue, or let me know.</p>
+
+				<h3>Coming Soon</h3>
+
+				<p>Looking to use Grunt, combined with YeoMan generator to quickly scaffold out new applications.</p>
+			</div>
+		</section>
+		<section id = "basic-usage">
+		<p>Once you have your files ready to go, you can implement your design. LESS Boilerplate has a
+			minimal set of LESS styles to get you running quickly. These include:</p>
+		<ul>
+			<li><a href = "#">Buttons</a></li>
+			<li><a href = "#">Grid System</a></li>
+			<li><a href = "#">Icons</a></li>
+			<li><a href = "#">Boxes</a></li>
+			<li><a href = "#">Helper Classes</a></li>
+		</ul>
+		<section id = "buttons">
+			<h1>Buttons</h1>
+
+			<p>Buttons in LESS Boilerplate are based on both Twitter Bootstrap and Calipso's default buttons.
+				Buttons can be in any of two recommended forms:</p>
+			<ol>
+				<li><p>Anchor tags:</p>
+						<pre class = "language-markup">
+							<code>&lt;a class = &quot;btn&quot; href = &quot;/url&quot;&gt;Link Button&lt;/a&gt;</code>
+						</pre>
+				</li>
+				<li><p>Button tags:</p>
+						<pre class = "language-markup">
+							<code>&lt;button&gt;HTML5 Button&lt;/button&gt;</code>
+						</pre>
+				</li>
+			</ol>
+			<p>Using the <code>button</code> tag, you don't need to worry about adding a class (you can
+				customize this, of course).</p>
+
+			<h2>Icons with Buttons</h2>
+
+			<p>Since we're using icomoon <i class = "icon-icomoon"></i>, we have the flexibility to put many
+				buttons with icons:</p>
+
+			<div class = "box">
+				<div class = "row centred">
+					<h3>Icon Button Examples</h3>
+				</div>
+				<div class = "row">
+					<div class = "sixcol">
+						<button>Free Parking <i class = "icon-accessibility"></i></button>
+						<button>Get Android App <i class = "icon-android"></i></button>
+						<button>Next <i class = "icon-arrow-right"></i></button>
+						<button>Previous <i class = "icon-arrow-left"></i></button>
+						<button><i class = "icon-basket"></i> Purchase</button>
+					</div>
+					<div class = "sixcol">
+						<button>Remove <i class = "icon-remove"></i></button>
+						<button>Facebook <i class = "icon-facebook"></i></button>
+						<button>Book Flight <i class = "icon-airplane"></i></button>
+						<button>Block Friend <i class = "icon-blocked"></i></button>
+						<button>Preview <i class = "icon-eye-2"></i></button>
+					</div>
+				</div>
+			</div>
+			<p>All we need to do to get icons working is to place an <code>i</code> element within the button:</p>
+				<pre class = "language-markup">
+					<code>&lt;button&gt;Text here &lt;i class
+						&nbsp;=&nbsp;&quot;icon-icon-of-my-choice&quot;&gt;&lt;/i&gt;&lt;/button&gt;</code>
+				</pre>
+			<section id = "button-groups">
+				<h2>Button Groups</h2>
+
+				<p>Also like Bootstrap, LESS Boilerplate comes with styles for button groups:</p>
+
+				<p>To get a button group, use any of the following classes:</p>
+				<ul>
+					<li><code>.toolbar</code></li>
+					<li><code>.btn-group</code></li>
+					<li><code>.actions</code></li>
+					<li><code>.form-actions</code></li>
+				</ul>
+				<p>Obviously, use the most applicable class when you're coding your HTML. For forms,
+					at the bottom, when you have to submit something, use <code>form-actions</code>; when you
+					just need a toolbar (say, at the top), just use <code>toolbar</code>.</p>
+
+				<div class = "box">
+					<h3>Button Group Examples</h3>
+					<h4>Basic Button Group</h4>
+
+					<div class = "toolbar centred">
+						<button>Click Me</button>
+						<button>Or Me</button>
+						<button>Or Me</button>
+					</div>
+					<h4>Advanced Button Group</h4>
+
+					<div class = "toolbar">
+						<button title = "Write a New Message"><i class = "icon-plus"></i> New Message</button>
+						<button title = "View Inbox"><i class = "icon-drawer"></i> Inbox</button>
+						<button title = "Search Messages in This Conversation"><i class = "icon-search"></i></button>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section id = "grid">
+			<h1>Grid System</h1>
+
+			<p>LESS Boilerplate uses a variation of
+				<a href = "http://andytaylor.me/2013/04/09/1140px-css-grid-retired/" target = "_blank">Andy Taylor's
+					newly-retired grid system</a>. The framework has been updated to allow for
+				generation of columns and rows, all based on the user's configuration.</p>
+			<button class="show-edit-container"><i class="icon-grid-view"></i>&nbsp;&nbsp;Generate Custom Grid</button>
+			<p>To use the grid system, you will need to understand how rows and columns work. All content
+				that you want to space out needs to first be placed in a <code>row</code>. To do this, all we
+				need to do is assign the class <code>row</code> to any element. For example:</p>
+
+			<div class = "box">
+						<pre class = "language-markup">
+							<code>&lt;div class&nbsp;=&nbsp;&quot;row&quot;&gt;{content goes here}&lt;/div&gt;</code>
+						</pre>
+			</div>
+			<p>Next, any elements that you want to separate in columns need to be assigned a column class. By
+				default, the grid system included starts out with <strong>12</strong> columns. So to have two
+				columns (or to divide the screen in two horizontal parts), we would assign the elements each
+				the class of <code>sixcol</code>. This is because <code>12 / 6 = 2</code>:</p>
+
+			<div class = "">
+				<div class = "row">
+					<div class = "sixcol">
+						<div class = "box"><code>sixcol</code></div>
+					</div>
+					<div class = "sixcol">
+						<div class = "box"><code>sixcol</code></div>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "threecol">
+						<div class = "box"><code>threecol</code></div>
+					</div>
+					<div class = "threecol">
+						<div class = "box"><code>threecol</code></div>
+					</div>
+					<div class = "threecol">
+						<div class = "box"><code>threecol</code></div>
+					</div>
+					<div class = "threecol">
+						<div class = "box"><code>threecol</code></div>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "threecol">
+						<div class = "box"><code>threecol</code></div>
+					</div>
+					<div class = "threecol">
+						<div class = "box"><code>threecol</code></div>
+					</div>
+					<div class = "sixcol ">
+						<div class = "box"><code>sixcol</code></div>
+					</div>
+				</div>
+			</div>
+
+			<p>Of course, you can customize your grid system to have however many columns you want,
+				and even the class names. For example, you might want classes to have the
+				<code>span-12</code> syntax like in Bootstrap. To edit the grid system,
+				simply change any of the variables in the <code>variables.less</code> file:</p>
+					<pre class = "language-css">
+						<code>
+							/*Grid*/
+							@num-cols: 12;
+							@rowWidth: 100%;
+							@container-lateral-padding: @em;
+							@col-margin-right: 3.8%;
+							@col-unit: ((@rowWidth + @col-margin-right) / @num-cols);
+							@col-identifier: "col";
+
+							@col-name-1: "one";
+							@col-name-2: "two";
+							@col-name-3: "three";
+							@col-name-4: "four";
+							@col-name-5: "five";
+							@col-name-6: "six";
+							@col-name-7: "seven";
+							@col-name-8: "eight";
+							@col-name-9: "nine";
+							@col-name-10: "ten";
+							@col-name-11: "eleven";
+							@col-name-12: "twelve";
+							@col-name-13: "thirteen";
+							@col-name-14: "fourteen";
+							@col-name-15: "fifteen";
+							@col-name-16: "sixteen";
+							@col-name-17: "seventeen";
+							@col-name-18: "eighteen";
+							@col-name-19: "nineteen";
+							@col-name-20: "twenty";
+							@col-name-21: "twentyone";
+							@col-name-22: "twentytwo";
+							@col-name-23: "twentythree";
+							@col-name-24: "twentyfour";
+
+							@col-identifier-named-numbers: false; //example(true): 3col; example(false): col3
+
+							@column-selector-number-at-end: false; //example(true): threecol; example(false): colthree
+						</code>
+					</pre>
+		</section>
+		<section id = "boxes">
+			<h1>Boxes</h1>
+
+			<p>You've already seen them, but boxes offer a great way to separate your content. The most
+				obvious application is an <code>aside</code> element.</p>
+					<pre class = "language-markup">
+						<code>&lt;aside class =&nbsp;&quot;box&quot;&gt;&lt;p&gt;My Content Goes here&lt;/p&gt;&lt;/aside&gt;</code>
+					</pre>
+			<p><strong>Output:</strong></p>
+			<aside class = "box">
+				<p>My Content Goes here</p>
 			</aside>
-		</div>
+			<p>Boxes are, by default, rounded. You can configure all of this yourself to better suit your
+				client.</p>
+
+			<h3>Responsive Design</h3>
+
+			<p>While it is true that this framework uses a "one-size-fits-all" scheme by default,
+				it's up to you as the developer to use any media queries as necessary. That's why you will
+				find included, a set of all possible media queries, from iPhone to Android devices. The media
+				queries are all empty except for the one set to media query once the browser is smaller than
+				the container size.</p>
+		</section>
+		<section id = "helpers">
+			<h1>Helpers</h1>
+
+			<p>LESS Boilerplate comes with a set of useful helper classes to help you quickly change the
+				appearance of elements:</p>
+			<table>
+				<caption>Table 1: Helper Classes</caption>
+				<thead>
+				<tr>
+					<th>Class Name</th>
+					<th>Description</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<th><code>.pull-right</code></th>
+					<td>Just adds <code>float: right;</code> to given element. Brings element out of flow,
+						to right.
+					</td>
+				</tr>
+				<tr>
+					<th><code>.hide</code></th>
+					<td>Hides given element. Does not show. Same as <code>display: none;</code></td>
+				</tr>
+				<tr>
+					<th><code>.show</code></th>
+					<td>Sets an element to show. Reverses <code>.hide</code></td>
+				</tr>
+				<tr>
+					<th><code>.invisible</code></th>
+					<td>Sets an element to be "invisible". Is still there, but cannot be seen. Doesn't work
+						in older versions of IE.
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</section>
+		</section>
+		<section id = "faq">
+			<header class = "centred">
+				<h1>FAQ
+					<small>Frequently Asked Questions</small>
+				</h1>
+			</header>
+			<section class = "question">
+				<h3 class="btn">Why LESS? I know of much better preprocessors that are more stable (SASS, Stylus,
+					etc.). What's the difference: LESS vs. these alternatives?</h3>
+				<div class = "answer">
+					<p>While it is true that LESS is less strongly typed than its siblings (SASS,
+						Stylus), LESS is unique in that it offers the ability of <strong>live previewing</strong> of
+						style changes using
+						<em><a href = "https://github.com/cloudhead/less.js/‎" target = "_blank">less.js</a>. This is
+							also very useful, as it gives you access to the DOM, and you can set variables based off
+							of DOM values in real-time. A big use case for this is in CMS,
+							where the user may want to preview style changes live (to a template). To see this in
+							action, check out
+							<a href = "https://github.com/srsgores/warp-kickstrap/tree/joomla-3" target = "_blank">warp
+								-kickstrap for joomla</a></em> or
+						<em><a href = "https://github.com/srsgores/warp-kickstrap" target = "_blank">for wordpress</a></em>. In
+						these templates, styles are generated in "previews", saved, and compiled in PHP, server-side.</p>
+
+					<p>Otherwise, it's mostly true that SASS and Stylus beat LESS. If you are looking for the same
+						features, minus the live editing, check out <a href = "https://github.com/srsgores/sass-boilerplate">sass
+							boilerplate</a>.</p></div>
+			</section>
+			<section class = "question">
+				<h3 class="btn">You load Modernizr by default, but this really isn't necessary. Modernizr is hacky,
+					and it shouldn't be used... unless absolutely necessary.</h3>
+
+				<div class = "answer">
+					<p>
+						Unfortunately, if you want to use new features like HTML5 <i class = "icon-html5"></i>, everything
+						can be considered a <em>hack</em>. While it is true that Modernizr does cause some overhead,
+						it's also true that you can customize your build of Modernizr and use it to whatever extent you
+						with. Using <a href = "http://bower.io" target = "_blank">bower</a>, you can import whichever
+						tests you want.
+					</p>
+				</div>
+			</section>
+			<section class = "question">
+				<h3 class="btn">So Andy Taylor says that the 1140 grid system is retired... so why are you using it here?</h3>
+
+				<div class = "answer">
+					<p>The reason I chose to include the 1140 grid system as my basis is that it was
+						what I found most intuitive as I was learning grid systems. Also, I didn't <em>use</em> the
+						grid system; rather, I built on top of it a base for <strong>generating</strong> new, improved
+						grid systems. Rather than working off <strong>one media query</strong>, users are encouraged
+						to use multiple media queries, eliminating the "one-size fits all" mentality. On the other
+						hand, having one media query does simplify things a little bit...</p>
+				</div>
+			</section>
+			<section class = "question">
+				<h3 class="btn">I'm new to LESS. Is it worth it, over using normal CSS? What tools should I use?</h3>
+
+				<div class = "answer">
+					<p>If you're new to LESS, you should <a href = "https://encrypted.google.com/search?aq=f&oq=less+css+tutorial&sourceid=chrome&ie=UTF-8&q=less+css+tutorial&qscrl=1" target = "_blank">try
+						google for some tutorials</a>. Learning a preprocessor language is
+						very useful if you plan on using CSS3 or cutting-edge features because you end up manually
+						typing prefixes. You could use tools like <a href = "http://leaverou.github.io/prefixfree/"
+						                                             target = "_blank">prefix-free</a>, but you will
+						ultimately save more time by using a preprocessor with mixins.</p>
+
+					<p>Some tools I recommend for compiling LESS:</p>
+					<ul>
+						<li><a href = "http://www.jetbrains.com/phpstorm/" target = "_blank">PHPStorm</a></li>
+						<li><a href = "http://wearekiss.com/simpless" target = "_blank">SimpLess</a></li>
+						<li><a href = "http://incident57.com/codekit/" target = "_blank">CodeKit (Mac)</a></li>
+						<li><a href = "http://winless.org/" target = "_blank">WinLess (Windows)</a></li>
+						<li><a href = "http://winless.org/online-less-compiler" target = "_blank">WinLESS Online Compiler</a></li>
+					</ul>
+				</div>
+			</section>
+			<section class = "question">
+				<h3 class="btn">This "framework" uses <em>some</em> markup elements from Bootstrap.  Is it
+					<strong>Bootstrap-compatible</strong>?</h3>
+				<div class="answer">
+					<p>
+						<strong>No.</strong>  LESS-Boilerplate is built with simplicity in mind.  Bootstrap is not simple.
+						Compare the following:</p>
+					<div class="row">
+						<div class="sixcol">
+							<header class="centred">
+								<h4>Bootstrap <small>navigation</small></h4>
+							</header>
+							<pre class="language-markup">
+								<code>&lt;div class=&quot;navbar&quot;&gt;<br/>	&lt;div class=&quot;navbar-inner&quot;&gt;<br/>		&lt;div class=&quot;container&quot; style=&quot;width: auto;&quot;&gt;<br/>			&lt;a class=&quot;btn btn-navbar&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.nav-collapse&quot;&gt;<br/>				&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;<br/>				&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;<br/>				&lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;<br/>			&lt;/a&gt;<br/>			&lt;a class=&quot;brand&quot; href=&quot;#&quot;&gt;Project name&lt;/a&gt;<br/>			&lt;div class=&quot;nav-collapse&quot;&gt;<br/>				&lt;ul class=&quot;nav&quot;&gt;<br/>					&lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;<br/>					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;<br/>					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;<br/>					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;<br/>					&lt;li class=&quot;dropdown&quot;&gt;<br/>						&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;<br/>						&lt;ul class=&quot;dropdown-menu&quot;&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;<br/>							&lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;<br/>							&lt;li class=&quot;nav-header&quot;&gt;Nav header&lt;/li&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;One more separated link&lt;/a&gt;&lt;/li&gt;<br/>						&lt;/ul&gt;<br/>					&lt;/li&gt;<br/>				&lt;/ul&gt;<br/>				&lt;form class=&quot;navbar-search pull-left&quot; action=&quot;&quot;&gt;<br/>					&lt;input type=&quot;text&quot; class=&quot;search-query span2&quot; placeholder=&quot;Search&quot;&gt;<br/>				&lt;/form&gt;<br/>				&lt;ul class=&quot;nav pull-right&quot;&gt;<br/>					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;<br/>					&lt;li class=&quot;divider-vertical&quot;&gt;&lt;/li&gt;<br/>					&lt;li class=&quot;dropdown&quot;&gt;<br/>						&lt;a href=&quot;#&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;Dropdown &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;&lt;/a&gt;<br/>						&lt;ul class=&quot;dropdown-menu&quot;&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Action&lt;/a&gt;&lt;/li&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;<br/>							&lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;<br/>							&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Separated link&lt;/a&gt;&lt;/li&gt;<br/>						&lt;/ul&gt;<br/>					&lt;/li&gt;<br/>				&lt;/ul&gt;<br/>			&lt;/div&gt;&lt;!-- /.nav-collapse --&gt;<br/>		&lt;/div&gt;<br/>	&lt;/div&gt;&lt;!-- /navbar-inner --&gt;<br/>&lt;/div&gt;</code>
+							</pre>
+						</div>
+						<div class="sixcol">
+							<header class="centred">
+								<h4>Or This <small>LESS-Boilerplate Markup</small>:</h4>
+							</header>
+							<pre class = "language-markup"><code>&lt;nav role = &quot;main&quot;&gt;<br/>	&lt;ul class = &quot;nav&quot;&gt;<br/>		&lt;li&gt;&lt;a href = &quot;#&quot;&gt;Home &lt;i class = &quot;icon-home&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>		&lt;li&gt;&lt;a href = &quot;#features&quot;&gt;Features &lt;i class = &quot;icon-book-2&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>		&lt;li&gt;&lt;a href = &quot;#installation&quot;&gt;Installation &lt;i class = &quot;icon-database&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>		&lt;li&gt;&lt;a href = &quot;#basic-usage&quot;&gt;Basic Usage &lt;i class = &quot;icon-book-3&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>		&lt;li&gt;&lt;a href = &quot;#faq&quot;&gt;FAQ &lt;i class = &quot;icon-puzzle&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>		&lt;li&gt;&lt;a href = &quot;#contact&quot;&gt;Contact &lt;i class = &quot;icon-mail&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;<br/>	&lt;/ul&gt;<br/>&lt;/nav&gt;</code></pre>
+						</div>
+					</div>
+					<p>It's pretty clear that Bootstrap contains much unneeded markup code.  Why do we need to have the
+						<code>dropdown</code> class on all the items?  Why not just use a bare HTML starting point like in
+						the example above?  Also note that the Bootstrap example lacks ARIA roles.</p>
+				</div>
+			</section>
+			<section class="question">
+				<h3 class="btn">So Andy Taylor says that the 1140 grid system is retired... so why are you using it here ?</h3>
+				<div class = "answer">
+					<p>The reason I chose to include the 1140 grid system as my basis is that it was
+						what I found most intuitive as I was learning grid systems. Also, I didn't <em>use</em> the
+						grid system; rather, I built on top of it a base for <strong>generating</strong> new, improved
+						grid systems. Rather than working off <strong>one media query</strong>, users are encouraged
+						to use multiple media queries, eliminating the "one-size fits all" mentality. On the other
+						hand, having one media query does simplify things a little bit...</p>
+				</div>
+			</section>
+		</section>
+		</article>
 	</div>
 	<footer class = "row centred">
 		<nav role = "secondary">

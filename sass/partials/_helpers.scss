@@ -181,7 +181,7 @@ Border radius
 
 %rounded-right {
 	@include border-top-right-radius($borderRadius);
-	@include border-bottom-left-radius($borderRadius);
+	@include border-bottom-right-radius($borderRadius);
 }
 
 %rounded-top {

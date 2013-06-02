@@ -54,6 +54,7 @@ nav, button, .btn, pre, code, aside, menu, .nav {
 
 legend, header, footer, article, section {
 	@extend .bordered-bottom;
+	@extend .bordered-top;
 }
 
 /* =============================================================================
@@ -68,9 +69,4 @@ images
 ========================================================================== */
 img, object, embed {
 	max-width: 100%;
-}
-
-img {
-	height: auto;
-	width: 100%;
 }
