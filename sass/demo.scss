@@ -1,0 +1,36 @@
+@import "compass/css3";
+@import "companimation";
+@import "companimation/preset/fade/fadeIn";
+@import "partials/_variables.scss";
+
+%delayed {
+	@include animation-delay(1.5s);
+}
+
+@for $i from 1 through 10 {
+	%delayed-#{$i} {
+		@include animation-delay(($i * $transitionTime));
+	}
+}
+.container {
+	@extend %fadeIn;
+	@extend %delayed-1;
+
+	header, .responsive-grid {
+		@extend %fadeIn;
+		@extend %delayed-2;
+		@include animation-duration(2s);
+	}
+
+	#content {
+		@extend %fadeIn;
+		@extend %delayed-3;
+		@include animation-duration(2.5s);
+	}
+
+	.box {
+		@extend %fadeIn;
+		@extend %delayed-1;
+		@include animation-duration(2.5s);
+	}
+}

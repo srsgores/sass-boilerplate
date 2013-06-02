@@ -59,6 +59,7 @@
 			@extend .opacity-0;
 			@extend .invisible;
 			@extend %absolute;
+			z-index: 9;
 			top: 100%;
 			@extend %normal-margin-left;
 			background: darken($tertiaryColour, 20);
@@ -69,6 +70,7 @@
 				//nested menu 2
 				left: 100%;
 				top: 0;
+				z-index: 10;
 				li {
 					&:first-child {
 						a {
