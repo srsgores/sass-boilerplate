@@ -21,6 +21,10 @@
 	visibility: hidden;
 }
 
+.show-phone {
+	display: none;
+}
+
 /* Hide only visually, but have it available for screenreaders: by Jon Neal.
   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
 .visuallyhidden {
@@ -32,6 +36,19 @@
 	padding: 0;
 	position: absolute;
 	width: 1px;
+	left: -500%;
+}
+
+@mixin visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	left: -500%;
 }
 
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
@@ -111,8 +128,24 @@
 	margin-left: $margin;
 }
 
+%normal-margin-top-bottom {
+	margin: $margin 0;
+}
+
+%normal-margin-left-right {
+	margin: 0 $margin;
+}
+
 %normal-padding {
 	padding: $padding;
+}
+
+%normal-padding-top-bottom {
+	padding: $padding 0;
+}
+
+%normal-padding-left-right {
+	padding: 0 $padding;
 }
 
 %normal-padding-bottom {
@@ -136,6 +169,11 @@ Border radius
 .rounded {
 	@include border-radius($borderRadius);
 }
+
+%rounded-none {
+	@include border-radius(0);
+}
+
 %rounded-left {
 	@include border-top-left-radius($borderRadius);
 	@include border-bottom-left-radius($borderRadius);
@@ -209,7 +247,7 @@ Border radius
 }
 
 %transitioned, %transition-all {
-	@include transition($transitionTime all $transitionType);
+	@include transition($transitionTime all $transitionFunction);
 }
 
 /* =============================================================================
@@ -227,11 +265,19 @@ Font Sizes
 	font-size: $fontSizeLarge;
 }
 
+.mini {
+	font-size: $fontSizeMini;
+}
+
 /* =============================================================================
 Opacity/visibility
 ========================================================================== */
 .opacity-0 {
 	@include opacity(0);
+}
+
+.opacity-1 {
+	@include opacity(1);
 }
 
 /* =============================================================================
@@ -277,4 +323,11 @@ Floats
 
 %absolute {
 	position: absolute;
+}
+
+/* =============================================================================
+Lists
+========================================================================== */
+%no-list-style {
+	list-style: none;
 }

@@ -7,6 +7,10 @@
 @import "partials/_variables.scss";
 @import "partials/_grids.scss";
 @import "partials/icomoon/_icomoon.scss";
+@import "partials/_type.scss";
+@import "partials/_forms.scss";
+@import "partials/_nav.scss";
+@import "partials/media-queries";
 
 body {
 	color: $textColour;
@@ -14,102 +18,6 @@ body {
 	background: $bodyBackgroundImage;
 	line-height: $lineHeight;
 	font-family: $baseFontFamily;
-}
-
-/* Type */
-h1, h2, h3, h4, h5, h6 {
-	font-weight: $headingFontWeight;
-}
-@for $i from 1 through 6 {
-	h#{$i} {
-		font-size: (($em * $multiplierLarge) - (($i * (($em * $multiplierLarge) / 6 )))) + ($em * $multiplier);
-	}
-}
-
-a {
-	@extend %transition-all;
-	color: #FFF;
-	&:visited {
-		color: darken($textColour, 30);
-	}
-	text-decoration: none;
-}
-
-.button, button, .btn, input[type="submit"], a.submit {
-
-	background: $buttonPrimaryColour;
-	@extend .bordered;
-	cursor: pointer;
-
-	@extend .medium;
-	font-weight: 400;
-
-	margin: 0 $margin 0 0;
-	padding: $borderRadiusLarge $padding;
-	text-shadow: 0 1px 0 #fff;
-	text-decoration: none;
-
-	@include background(linear-gradient(#ededed, #d9d9d9));
-	@include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 1), 0 1px 4px rgba(150, 150, 150, 0.5));
-	@extend %rounded-large;
-	&:hover, &:focus, &.loading {
-		background: #2F5163;
-		border-color: #333;
-		color: #fff;
-		text-shadow: 0 1px 1px #111;
-		@include box-shadow(inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 4px rgba(150, 150, 150, 0.5));
-		@include background(linear-gradient(lighten(#2F5163, 10%), #2F5163));
-	}
-
-	&:active {
-		border-color: darken($borderColour, 25%);
-		@include box-shadow(inset 0 0 $borderRadiusLarge #000);
-	}
-
-
-}
-
-
-.actions, .form-actions {
-	@extend .centred;
-	@extend .bordered-top;
-	background: fade-out($secondaryColour, 0.83);
-	padding: $padding 0;
-
-	input, .btn, button {
-		margin: 0 -1px 0 0;
-		&:last-child {
-			@include border-top-left-radius(0);
-			@include border-bottom-left-radius(0);
-		}
-		&:first-child {
-			@include border-top-right-radius(0);
-			@include border-bottom-right-radius(0);
-		}
-	}
-
-}
-
-.toolbar, .btn-group, .actions input {
-	position: relative;
-	@extend %margin-none;
-
-	li {
-
-		@extend .inline;
-		&:first-child a {
-			@extend %rounded-left;
-		}
-		&:last-child a {
-			@extend %rounded-right;
-		}
-
-		a {
-			@extend .small;
-			font-weight: 400;
-			margin-right: -1px;
-		}
-	}
 }
 
 .box {
@@ -121,13 +29,16 @@ a {
 	@extend %transition-all;
 }
 
-
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video, %normal-margin-bottom {
 	@extend %normal-margin-bottom; //spaced only at bottom by default
 }
 
 nav, nav li, .toolbar, .toolbar li, .btn-group {
 	@extend .inline;
+	ul {
+		@extend %margin-none;
+		@extend %padding-none;
+	}
 	input {
 		@extend .inline;
 	}
@@ -163,5 +74,3 @@ img {
 	height: auto;
 	width: 100%;
 }
-
-@import "partials/media-queries";

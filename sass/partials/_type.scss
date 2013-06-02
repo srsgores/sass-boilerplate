@@ -1,0 +1,28 @@
+/* Type */
+#{headings(all)} {
+	font-weight: $headingFontWeight;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-size: (($em * $multiplierLarge) - (($i * (($em * $multiplierLarge) / 6 )))) + ($em * $multiplier);
+	}
+}
+
+a {
+	@extend %transition-all;
+	color: $inverseTextColour;
+	&:visited {
+		color: darken($textColour, 30);
+	}
+	text-decoration: none;
+}
+
+.small {
+	@extend .small;
+}
+
+ul, ol, dl {
+	padding-left: ($paddingLarge * $multiplier);
+	@extend %normal-margin-top-bottom;
+}

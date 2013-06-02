@@ -1,0 +1,64 @@
+.button, button, .btn, input[type="submit"], a.submit {
+	background: $buttonPrimaryColour;
+	@extend .bordered;
+	@extend .medium;
+	@extend %rounded-large;
+	cursor: pointer;
+	font-weight: $baseFontWeight;
+	margin: 0 $margin 0 0;
+	padding: $paddingSmall $padding;
+	text-shadow: 0 1px 0 $inverseTextColour;
+	text-decoration: none;
+	@include background(linear-gradient(lighten($secondaryColour, 30%), $secondaryColour));
+	@include box-shadow(inset 0 1px 0 $bodyBackground, 0 1px 4px fade-out($secondaryColour, 0.5));
+
+	&:hover, &:focus, &.loading {
+		background: $tertiaryColour;
+		border-color: darken($tertiaryColour, 20);
+		color: $inverseTextColour;
+		text-shadow: 0 1px 1px darken($tertiaryColour, 20);
+		@include box-shadow(inset 0 1px 0 fade-out($secondaryColour, 0.25), 0 1px 4px fade-out($secondaryColour, 0.5));
+		@include background(linear-gradient(lighten($tertiaryColour, 10), $tertiaryColour));
+	}
+	&:active {
+		border-color: darken($borderColour, 25%);
+		@include box-shadow(inset 0 0 $borderRadiusLarge #000);
+	}
+}
+
+.actions, .form-actions {
+	@extend .centred;
+	@extend .bordered-top;
+	background: fade-out($secondaryColour, 0.83);
+	padding: $padding 0;
+	input, .btn, button {
+		margin: 0 -#{$borderRadius} 0 0;
+		&:last-child {
+			@include border-top-left-radius(0);
+			@include border-bottom-left-radius(0);
+		}
+		&:first-child {
+			@include border-top-right-radius(0);
+			@include border-bottom-right-radius(0);
+		}
+	}
+}
+
+.toolbar, .btn-group, .actions input {
+	position: relative;
+	@extend %margin-none;
+	li {
+		@extend .inline;
+		&:first-child a {
+			@extend %rounded-left;
+		}
+		&:last-child a {
+			@extend %rounded-right;
+		}
+		a {
+			@extend .small;
+			font-weight: $baseFontWeight;
+			margin-right: -$borderRadius;
+		}
+	}
+}

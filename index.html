@@ -36,15 +36,45 @@
 
 <body>
 <header class = "row centred">
-	<nav role = "main">
+	<label for="toggle-nav" class="btn responsive-grid centred show-phone"><i class="icon-list-2"></i></label>
+	<input type="checkbox" class="toggle-nav visuallyhidden" id="toggle-nav" checked="checked">
+	<nav role = "main" class="nav">
 		<!-- use for emmet/zen coding -->
 		<!-- ul.nav>li*5>a[data-icon=] -->
-		<ul class = "nav">
+		<ul>
 			<li><a data-icon = "! " href = "#">Home</a></li>
-			<li><a data-icon = "# " href = "">About</a></li>
-			<li><a data-icon = "d " href = "">Download</a></li>
-			<li><a data-icon = "B " href = "">FAQ</a></li>
-			<li><a data-icon = "5 " href = "">Contact</a></li>
+			<li>
+				<a data-icon = "# " href = "#">About</a>
+				<ul>
+					<li><a href = "#">Example Dropdown 1</a></li>
+					<li><a href = "#">Example Dropdown 2</a></li>
+					<li><a href = "#">Example Dropdown 3</a></li>
+					<li>
+						<a href = "#">Example Dropdown 4</a>
+						<ul>
+							<li><a href = "#">Example Dropdown 1</a></li>
+							<li><a href = "#">Example Dropdown 2</a></li>
+							<li><a href = "#">Example Dropdown 3</a></li>
+							<li><a href = "#">Example Dropdown 4</a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li><a data-icon = "d " href = "#">Download</a></li>
+			<li>
+				<a data-icon = "B " href = "#">FAQ</a>
+				<ul>
+							<li><a href = "#">Example Dropdown 1</a></li>
+							<li><a href = "#">Example Dropdown 2</a></li>
+							<li><a href = "#">Example Dropdown 3</a></li>
+							<li><a href = "#">Example Dropdown 4</a></li>
+							<li><a href = "#">Example Dropdown 5</a></li>
+							<li><a href = "#">Example Dropdown 6</a></li>
+							<li><a href = "#">Example Dropdown 7</a></li>
+							<li><a href = "#">Example Dropdown 8</a></li>
+				</ul>
+			</li>
+			<li><a data-icon = "5 " href = "#">Contact</a></li>
 		</ul>
 	</nav>
 </header>
@@ -77,18 +107,19 @@
 			</aside>
 		</div>
 	</div>
+	<footer class = "row centred">
+		<nav role = "secondary">
+			<ul>
+				<li><a data-icon = "" href = "#">Link 1</a></li>
+				<li><a data-icon = "" href = "#">Link 2</a></li>
+				<li><a data-icon = "" href = "#">Link 3</a></li>
+				<li><a data-icon = "" href = "#">Link 4</a></li>
+			</ul>
+		</nav>
+	</footer>
 </div>
 
-<footer class = "row centred">
-	<nav role = "secondary">
-		<ul>
-			<li><a data-icon = "" href = "#">Link 1</a></li>
-			<li><a data-icon = "" href = "#">Link 2</a></li>
-			<li><a data-icon = "" href = "#">Link 3</a></li>
-			<li><a data-icon = "" href = "#">Link 4</a></li>
-		</ul>
-	</nav>
-</footer>
+
 <script src = "js/components/jquery/jquery.min.js"></script>
 <script src = "js/main.js"></script>
 

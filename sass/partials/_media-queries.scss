@@ -79,24 +79,6 @@
 	}
 }
 
-@media screen and (max-width: 420px) {
-
-}
-
-@media screen and (max-width: 800px) {
-
-}
-
-@media screen and (max-width: 1200px) {
-
-}
-
-/* Smaller screens */
-
-@media only screen and (max-width: 1023px) {
-
-}
-
 /* Mobile */
 
 @include breakpoint($breakpointMain) {
@@ -142,6 +124,14 @@
 	textarea, input {
 		width: 98%;
 		min-width: 98%;
-		padding: $borderRadius;
+		padding: $paddingSmall $padding;
+	}
+
+	.hidden-phone {
+		display: none;
+	}
+
+	.show-phone {
+		display: block;
 	}
 }

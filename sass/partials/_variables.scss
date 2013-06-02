@@ -34,17 +34,21 @@ $multiplierLargePercentage: $multiplierLarge * 10%;
 $padding: 1em;
 $paddingLarge: $padding * $multiplier;
 $paddingSmall: $padding / $multiplier;
+$paddingMini: $padding / $multiplierLarge;
 $margin: 1em;
+$marginSmall: $margin / $multiplier;
 $marginLarge: $margin * $multiplierLarge;
+$marginMini: $margin / $multiplierLarge;
 
 /* =============================================================================
 Type
 ========================================================================== */
-$baseFontSize: 16px;
+$baseFontSize: 100%;
 $baseFontFamily: "Open Sans", "sans-serif", "arial";
 $fontSizeSmall: 85%;
 $fontSizeMedium: 90%;
 $fontSizeLarge: 250%;
+$fontSizeMini: 60%;
 $lineHeight: 1.4;
 $em: 1em;
 $headingFontWeight: 300;
@@ -56,11 +60,12 @@ $borderRadiusLarge: $borderRadius * 1.25;
 
 /* Transitions*/
 $transitionTime: 0.5s;
-$transitionType: linear;
+$transitionFunction: linear;
 /* =============================================================================
 Colours
 ========================================================================== */
 $textColour: #000;
+$inverseTextColour: invert($textColour);
 $primaryColour: $textColour;
 //colour of text and main colour overall
 $secondaryColour: #5d5d5d;
@@ -68,11 +73,6 @@ $tertiaryColour: #cc130f;
 //background colour.  Should be the opposite of primary colour for good results
 $bodyBackground: #FFF;
 $bodyBackgroundImage: none;
-
-/* =============================================================================
-shadow
-========================================================================== */
-$shadow: #{0 0 3em #CCC};
 
 /* =============================================================================
 Buttons
@@ -85,7 +85,7 @@ Borders
 ========================================================================== */
 $borderWidth: 1px;
 $borderStyle: solid;
-$borderColour: lighten($textColour, 80%);
+$borderColour: fade-out(lighten($textColour, 80%), 0.5);
 $border: $borderWidth $borderStyle $borderColour;
 
 /* =============================================================================

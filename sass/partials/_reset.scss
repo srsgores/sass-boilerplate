@@ -16,9 +16,9 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	@extend %margin-none;
-	@extend %padding-none;
-	@extend .border-none;
+	margin: 0;
+	padding: 0;
+	border: none;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -32,10 +32,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-}
-
-ol, ul {
-	list-style: none;
 }
 
 blockquote, q {
