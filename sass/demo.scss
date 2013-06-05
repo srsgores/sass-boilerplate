@@ -3,6 +3,8 @@
 @import "companimation/preset/fade/fadeIn";
 @import "partials/_variables.scss";
 @import "partials/helpers";
+@import "partials/icomoon/icomoon";
+
 %delayed {
 	@include animation-delay(1.5s);
 }
@@ -62,14 +64,35 @@ section {
 
 .overview {
 	h1 {
-		line-height: 5;
 		color: $tertiaryColour;
 		text-shadow: 0 0 1em $tertiaryColour;
+		@extend %margin-none;
+		padding: 3em 0;
 		background: url("http://subtlepatterns.com/patterns/black_twill.png");
 		@include opacity(0.7);
 	}
 	@include box-shadow(inset 0 -1em 14em rgb(192, 192, 192), inset 0 -8em 9em -10em rgba(0, 0, 0, 0.52));
 	.toolbar {
 		background: none;
+	}
+}
+
+#brief-description {
+	padding: 3em;
+	font-style: italic;
+	blockquote {
+		font-size: 2em;
+		@extend .centred;
+		@extend %normal-padding;
+		&:before, &:after {
+			font-family: "icomoon";
+			font-size: 4em;
+		}
+		&:before {
+			content: $icon-quote-left;
+		}
+		&:after {
+			content: $icon-quote-right;
+		}
 	}
 }
