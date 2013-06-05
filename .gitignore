@@ -173,5 +173,6 @@ sass/imports/media-queries.css
 sass/imports/menu.css
 sass/imports/mixins.css
 sass/imports/variables.css
+.sass-cache
 
 codekit-config.json
