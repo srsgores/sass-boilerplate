@@ -18,31 +18,9 @@
 	@include background(linear-gradient($tertiaryColour, darken($tertiaryColour, 30)));
 	ul {
 		//normal menu styling here
-		@include breakpoint($breakpointMain) {
-			li {
-				width: $rowWidth;
-				a {
-					display: block;
-					border-right: none;
-					border-left: none;
-					border-bottom: 1px solid darken($secondaryColour, 25);
-				}
-				&:last-child a {
-					border-bottom: none;
-				}
-				ul, ul ul {
-					@include opacity(1);
-					visibility: visible;
-					font-size: $fontSizeSmall;
-					display: block;
-					position: static;
-					margin: 0;
-				}
-			}
-		}
 		a {
 			color: $inverseTextColour;
-			font-size: $fontSizeMedium;
+			@extend .medium;
 			border-right: 1px solid darken($secondaryColour, 25);
 			@extend .inline;
 			padding: $paddingSmall $paddingLarge;
@@ -159,9 +137,4 @@
 .responsive-grid {
 	@extend .btn;
 	@extend %margin-none;
-	@include breakpoint($breakpointMain) {
-		& + input[type="checkbox"]:checked + nav {
-			@include visuallyhidden;
-		}
-	}
 }

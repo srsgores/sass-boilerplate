@@ -1,8 +1,8 @@
 @import "compass/css3/pie";
 @import "compass/css3";
 
+$pie-enabled: false;
 $pie-behavior: url("/css/PIE.htc");
-
 $pie-base-class: pie-element;
 
 /*Grid*/
@@ -13,6 +13,7 @@ $col-margin-right: 3.8%;
 $col-unit: ($rowWidth + $col-margin-right) / $num-cols;
 
 $rowNotation: row;
+$columnNotation: col;
 
 $container-width: $rowWidth;
 $total-columns: $num-cols;
@@ -38,7 +39,7 @@ $paddingMini: $padding / $multiplierLarge;
 $margin: 1em;
 $marginSmall: $margin / $multiplier;
 $marginLarge: $margin * $multiplierLarge;
-$marginMini: $margin / $multiplierLarge;
+$marginMini: $marginSmall / $multiplierLarge;
 
 /* =============================================================================
 Type
@@ -55,31 +56,29 @@ $headingFontWeight: 300;
 $baseFontWeight: 500;
 
 $borderRadius: ($margin / $multiplierLarge);
-$borderRadiusSmall: $borderRadius * 0.75;
-$borderRadiusLarge: $borderRadius * 1.25;
+$borderRadiusSmall: $borderRadius / $multiplier;
+$borderRadiusLarge: $borderRadius * $multiplier;
 
 /* Transitions*/
-$transitionTime: 0.5s;
-$transitionFunction: linear;
+$transitionTime: 0.5s; //global transition time
+$transitionFunction: linear; //transition function for CSS3 transitions
 /* =============================================================================
 Colours
 ========================================================================== */
 $textColour: #000;
 $inverseTextColour: invert($textColour);
-$primaryColour: $textColour;
-//colour of text and main colour overall
-$secondaryColour: #d5d5d5;
-$tertiaryColour: #313131;
+$primaryColour: #CCC; // colour of text and main colour overall
+$secondaryColour: #0f0f0f; // colour of any components, backgrounds, etc.
+$tertiaryColour: #7c7c7c; //special colour to complement secondary colour
 //background colour.  Should be the opposite of primary colour for good results
-$bodyBackground: #FFF;
+$bodyBackground: $inverseTextColour;
 $bodyBackgroundImage: url("http://subtlepatterns.com/patterns/grey.png");
 $bodyBackgroundImageAlt: url("http://subtlepatterns.com/patterns/shattered.png");
 
 /* =============================================================================
 Buttons
 ========================================================================== */
-$buttonPrimaryColour: #CCC;
-$buttonSecondaryColour: lighten($buttonPrimaryColour, $multiplierLargePercentage);
+$buttonPrimaryColour: lighten($secondaryColour, 15);
 
 /* =============================================================================
 Borders

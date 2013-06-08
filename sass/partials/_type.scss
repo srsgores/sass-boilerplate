@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
 /* Type */
 #{headings(all)} {
 	font-weight: $headingFontWeight;
@@ -16,10 +18,6 @@ a {
 		color: darken($textColour, 30);
 	}
 	text-decoration: none;
-}
-
-.small {
-	@extend .small;
 }
 
 ul, ol, dl {

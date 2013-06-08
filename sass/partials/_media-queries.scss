@@ -1,28 +1,3 @@
-//   ---
-//   @ iphone3                                // only iPhone (2, 3G, 3GS) landscape & portrait
-//   @ iphone3-landscape                      // only iPhone (2, 3G, 3GS) only landscape
-//   @ iphone3-portrait                       // only iPhone (2, 3G, 3GS) only portrait
-//   ---
-//   @ iphone4                                // only iPhone (4, 4S) landscape & portrait
-//   @ iphone4-landscape                      // only iPhone (4, 4S) only landscape
-//   @ iphone4-portrait                       // only iPhone (4, 4S) only portrait
-//   ---
-//   @ iphone5                                // only iPhone (5) landscape & portrait
-//   @ iphone5-landscape                      // only iPhone (5) only landscape
-//   @ iphone5-portrait                       // only iPhone (5) only portrait
-//   ---
-//   @ ipad                                   // all iPads (1, 2, 3, 4, Mini) landscape & portrait
-//   @ ipad-landscape                         // all iPads (1, 2, 3, 4, Mini) only landscape
-//   @ ipad-portrait                          // all iPads (1, 2, 3, 4, Mini) only portrait
-//   ---
-//   @ ipad-retina                            // only iPad (3, 4) landscape & portrait
-//   @ ipad-retina-landscape                  // only iPad (3, 4) only landscape
-//   @ ipad-retina-portrait                   // only iPad (3, 4) only portrait
-//   ---
-//   @ hdpi(ratio)                            // devices with hidpi displays (default ratio: 1.3)
-//
-// ---------------------------------------------------------------------------------------------------------------------
-
 /* --- main content ------------------------------------------------------------------------------------------------- */
 @import "variables.scss";
 @import "compass/css3";
@@ -79,26 +54,25 @@
 	}
 }
 
-/* Mobile */
+/* =============================================================================
+Mobile main media query
+========================================================================== */
 
 @include breakpoint($breakpointMain) {
-
+	/* Ensure no increased font sizes */
 	body {
 		font-size: $baseFontSize;
 		-webkit-text-size-adjust: none;
 	}
-
-	.#{$rowNotation}, body, .container {
+	/* Responsive grids */
+	.#{$rowNotation}, body, .container, .button, button, .btn, input[type="submit"], a.submit, textarea, input, img, .actions, .form-actions, .btn-group, .toolbar, .nav ul li {
 		width: 100%;
 		min-width: 0;
 		margin-left: 0;
 		margin-right: 0;
 	}
-
 	.container {
-		.#{$rowNotation} {
-			padding: 0 $padding;
-		}
+		padding: 0 $padding; //allow padding to the side of the container
 		@for $i from 1 through $num-cols {
 			.#{$rowNotation} {
 				.#{col-name($i)}, .#{col-name($i)}:last-child {
@@ -111,27 +85,62 @@
 			}
 		}
 	}
-	img {
-		width: 100%;
-		height: 100%;
-	}
 	header {
 		overflow: visible;
 	}
-	.toolbar, .form-actions, header, footer, caption, menu, figure, figcaption, nav {
+	.toolbar, .form-actions, header, footer, caption, menu, figure, figcaption, nav, .button, button, .btn, input[type="submit"], a.submit {
 		text-align: center;
 	}
 	textarea, input {
-		width: 98%;
-		min-width: 98%;
 		padding: $paddingSmall $padding;
 	}
-
 	.hidden-phone {
 		display: none;
 	}
-
-	.show-phone {
+	.container .show-phone, .button, button, .btn, input[type="submit"], a.submit {
 		display: block;
+	}
+	/* Responsive buttons */
+	.actions, .form-actions, .btn-group, .toolbar {
+		.button, button, .btn, input[type="submit"], a.submit {
+			&:first-child {
+				@include border-top-radius($borderRadiusLarge);
+				@include border-bottom-radius(0);
+			}
+			&:last-child {
+				@include border-top-radius(0);
+				@include border-bottom-radius($borderRadiusLarge);
+			}
+			margin: -#{$marginMini} 0 0 0; //buttons don't show double borders
+		}
+	}
+
+	/* Responsive navigation */
+	.nav ul {
+		li {
+			a {
+				display: block;
+				border-right: none;
+				border-left: none;
+				border-bottom: $borderWidth $borderStyle darken($secondaryColour, 25);
+			}
+			&:last-child a {
+				border-bottom: none;
+			}
+			ul, ul ul {
+				@include opacity(1);
+				visibility: visible;
+				font-size: $fontSizeSmall;
+				display: block;
+				position: static;
+				margin: 0;
+			}
+		}
+	}
+	/*Responsive grid button*/
+	.responsive-grid {
+		& + input[type="checkbox"]:checked + nav {
+			@include visuallyhidden;
+		}
 	}
 }

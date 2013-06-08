@@ -89,13 +89,12 @@
 .centred {
 	text-align: center;
 }
-
-.pie-element {
-	// relative is the default, so passing relative
-	// is redundant, but we do it here for clarity.
-	@include pie-element(relative);
-}
-
+@if $pie-enabled == true {
+	.pie-element {
+		// relative is the default, so passing relative
+		// is redundant, but we do it here for clarity.
+		@include pie-element(relative);
+	}
 // But sometimes this messes up your positioning
 // So you can also use z-indexing. In this case
 // an ancestor element before or having the first
@@ -104,30 +103,54 @@
 // can be provided to the pie-container mixin).
 // And then the pie element itself should be given
 // a z-index of -1.
-.pie-container {
-	@include pie-container;
+	.pie-container {
+		@include pie-container;
+	}
+	.pie {
+		@include pie;
+	}
+}
+
+/* =============================================================================
+Overflow
+========================================================================== */
+%overflow-visible {
+	overflow: visible;
+}
+
+%overflow-hidden {
+	overflow: hidden;
+}
+/* =============================================================================
+Margins
+========================================================================== */
+
+/* Normal margin */
+%normal-margin {
+	margin: $margin;
 }
 
 %margin-none {
 	margin: 0;
 }
 
-%normal-margin {
-	margin: $margin;
-}
-
 %normal-margin-bottom {
 	margin-bottom: $margin;
 }
 
-%normal-margin-right {
-	margin-right: $margin;
+%normal-margin-top {
+	margin-top: $margin;
 }
 
 %normal-margin-left {
 	margin-left: $margin;
 }
 
+%normal-margin-right {
+	margin-right: $margin;
+}
+
+/* Normal margin combinations */
 %normal-margin-top-bottom {
 	margin: $margin 0;
 }
@@ -136,8 +159,17 @@
 	margin: 0 $margin;
 }
 
+/* =============================================================================
+Padding
+========================================================================== */
+
+/* Normal padding */
 %normal-padding {
 	padding: $padding;
+}
+
+%padding-none {
+	padding: 0;
 }
 
 %normal-padding-top-bottom {
@@ -160,18 +192,17 @@
 	padding-left: $padding;
 }
 
-%padding-none {
-	padding: 0;
-}
 /* =============================================================================
 Border radius
 ========================================================================== */
+
+/* Normal border radii */
+
 .rounded {
 	@include border-radius($borderRadius);
-}
-
-%rounded-none {
-	@include border-radius(0);
+	@if $pie-enabled == true {
+		@extend .pie;
+	}
 }
 
 %rounded-left {
@@ -199,6 +230,15 @@ Border radius
 	@include border-bottom-left-radius(0);
 }
 
+/* Large border radii */
+
+%rounded-large {
+	@include border-radius($borderRadiusLarge);
+	@if $pie-enabled == true {
+		@extend .pie;
+	}
+}
+
 %rounded-left-large {
 	@include border-top-left-radius($borderRadiusLarge);
 	@include border-bottom-left-radius($borderRadiusLarge);
@@ -206,7 +246,7 @@ Border radius
 
 %rounded-right-large {
 	@include border-top-right-radius($borderRadiusLarge);
-	@include border-bottom-left-radius($borderRadiusLarge);
+	@include border-bottom-right-radius($borderRadiusLarge);
 }
 
 %rounded-top-large {
@@ -219,6 +259,12 @@ Border radius
 	@include border-bottom-right-radius($borderRadiusLarge);
 }
 
+/* No rounded radii (useful for overriding other elements with radii) */
+
+%rounded-none {
+	@include border-radius(0);
+}
+
 %rounded-left-none {
 	@include border-top-left-radius(0);
 	@include border-bottom-left-radius(0);
@@ -226,7 +272,7 @@ Border radius
 
 %rounded-right-none {
 	@include border-top-right-radius(0);
-	@include border-bottom-left-radius(0);
+	@include border-bottom-right-radius(0);
 }
 
 %rounded-top-none {
@@ -239,11 +285,11 @@ Border radius
 	@include border-bottom-right-radius(0);
 }
 
-%rounded-large {
-	@include border-radius($borderRadiusLarge);
-}
+
 .border-box {
 	@include box-sizing(border-box);
+	*behavior: url(/css/boxsizing.htc); //allow correct box-sizing on IE 6, 7 (will not work on localhost)
+	//also, make sure to add `AddType text/x-component .htc` to apache.config file
 }
 
 %transitioned, %transition-all {
@@ -253,16 +299,16 @@ Border radius
 /* =============================================================================
 Font Sizes
 ========================================================================== */
+.large {
+	font-size: $fontSizeLarge;
+}
+
 .medium {
 	font-size: $fontSizeMedium;
 }
 
 .small {
 	font-size: $fontSizeSmall;
-}
-
-.large {
-	font-size: $fontSizeLarge;
 }
 
 .mini {
@@ -317,12 +363,33 @@ Floats
 	float: right;
 }
 
-.inline {
-	@include inline-block();
-}
-
+/* =============================================================================
+Positions
+========================================================================== */
 %absolute {
 	position: absolute;
+}
+
+%fixed {
+	position: fixed;
+}
+
+%relative {
+	position: relative;
+}
+
+%static {
+	position: static;
+}
+
+/* =============================================================================
+Display modes
+========================================================================== */
+%block {
+	display: block;
+}
+.inline { //made into a class for potential markup in CMS
+	@include inline-block();
 }
 
 /* =============================================================================
@@ -330,4 +397,11 @@ Lists
 ========================================================================== */
 %no-list-style {
 	list-style: none;
+}
+
+/* =============================================================================
+Widths
+========================================================================== */
+%row-width {
+	width: $rowWidth;
 }

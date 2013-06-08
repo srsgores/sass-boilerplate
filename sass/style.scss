@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
 @import "partials/variables.scss";
 @import "partials/_helpers.scss";
 @import "partials/reset.scss";
@@ -49,10 +48,9 @@ Border Radius
 ========================================================================== */
 nav, button, .btn, pre, code, aside, menu, .nav {
 	@extend .rounded;
-	@include pie;
 }
 
-legend, header, footer, article, section {
+header, footer, article, section {
 	@extend .bordered-bottom;
 	@extend .bordered-top;
 }

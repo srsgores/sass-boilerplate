@@ -4,11 +4,17 @@
 @import "partials/_variables.scss";
 @import "partials/helpers";
 @import "partials/icomoon/icomoon";
+@import "breakpoint";
+
+$transitionFunction: ease;
 
 %delayed {
 	@include animation-delay(1.5s);
 }
 
+body {
+	@extend %transition-all;
+}
 @for $i from 1 through 10 {
 	%delayed-#{$i} {
 		@include animation-delay(($i * $transitionTime));
@@ -64,8 +70,8 @@ section {
 
 .overview {
 	h1 {
-		color: $tertiaryColour;
-		text-shadow: 0 0 1em $tertiaryColour;
+		color: invert($tertiaryColour);
+		text-shadow: 0 0 1em invert($tertiaryColour);
 		@extend %margin-none;
 		padding: 3em 0;
 		background: url("http://subtlepatterns.com/patterns/black_twill.png");
@@ -73,7 +79,12 @@ section {
 	}
 	@include box-shadow(inset 0 -1em 14em rgb(192, 192, 192), inset 0 -8em 9em -10em rgba(0, 0, 0, 0.52));
 	.toolbar {
-		background: none;
+		@extend %row-width;
+		@include breakpoint($breakpointMain) {
+			padding: $padding;
+			margin-top: $margin;
+			@include box-sizing(border-box);
+		}
 	}
 }
 

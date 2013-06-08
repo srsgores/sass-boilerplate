@@ -5,46 +5,62 @@
 
 @function col-name($n) {
 /* Use naming consistent with original 1140x Grid V2 */
-	$col-name: col;
+	$col-name: $columnNotation; //default
 
 	@if $n == 1  {
-		$col-name: onecol;
+		$col-name: one;
 	}
 	@if $n == 2  {
-		$col-name: twocol;
+		$col-name: two;
 	}
 	@if $n == 3  {
-		$col-name: threecol;
+		$col-name: three;
 	}
 	@if $n == 4  {
-		$col-name: fourcol;
+		$col-name: four;
 	}
 	@if $n == 5  {
-		$col-name: fivecol;
+		$col-name: five;
 	}
 	@if $n == 6  {
-		$col-name: sixcol;
+		$col-name: six;
 	}
 	@if $n == 7  {
-		$col-name: sevencol;
+		$col-name: seven;
 	}
 	@if $n == 8  {
-		$col-name: eightcol;
+		$col-name: eight;
 	}
 	@if $n == 9  {
-		$col-name: ninecol;
+		$col-name: nine;
 	}
 	@if $n == 10 {
-		$col-name: tencol;
+		$col-name: ten;
 	}
 	@if $n == 11 {
-		$col-name: elevencol;
+		$col-name: eleven;
 	}
 	@if $n == 12 {
-		$col-name: twelvecol;
+		$col-name: twelve;
 	}
+	@if $n == 13 {
+		$col-name: thirteen;
+	}
+	@if $n == 14 {
+		$col-name: fourteen;
+	}
+	@if $n == 15 {
+		$col-name: fifteen;
+	}
+	@if $n == 16 {
+		$col-name: sixteen;
+	}
+	@return $col-name#{$columnNotation};
+}
 
-	@return $col-name;
+@function relativeColName($n, $num-cols) {
+	$colClassFloat: $num-cols / $n;
+	@return round($colClassFloat);
 }
 
 %col {
@@ -70,7 +86,7 @@
 	.#{$rowNotation} {
 		width: $container-width;
 		margin: 0 auto;
-		overflow: hidden;
+		@extend %overflow-hidden;
 		@extend %padding-none;
 		@extend .border-box;
 
