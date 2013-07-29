@@ -72,10 +72,19 @@
 		@extend %col;
 	}
 
-	%#{$rowNotation} {
+	.#{$rowNotation} {
 		%#{col-name($i)}:last-child {
 			@extend %last !optional;
 			@include span-columns($i omega, $num-cols);
+		}
+	}
+
+	%#{col-name($i)} {
+		@if $i == $num-cols {
+			@include span-columns($i omega, $num-cols);
+		}
+		@else {
+			@include span-columns($i, $num-cols);
 		}
 	}
 }
@@ -83,30 +92,21 @@
 .container {
 	@include container;
 	@extend %border-box;
-	%#{$rowNotation} {
+	.#{$rowNotation} {
 		width: $container-width;
 		margin: 0 auto;
 		@extend %overflow-hidden;
 		@extend %padding-none;
 		@extend %border-box;
 
-		&%extended-height {
+		&.extended-height {
 			@extend %overflow-visible;
 		}
 	}
 }
 
 @for $i from 1 through ($num-cols) {
-	%#{$rowNotation} {
-		%#{col-name($i)} {
-			@if $i == $num-cols {
-				@include span-columns($i omega, $num-cols);
-			}
-			@else {
-				@include span-columns($i, $num-cols);
-			}
-		}
-	}
+
 }
 
 %last {

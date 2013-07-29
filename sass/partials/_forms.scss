@@ -37,6 +37,7 @@ button, .btn, input[type="submit"] {
 	@extend %centred;
 	@extend %bordered-top;
 	@extend %normal-padding-top-bottom;
+	@extend %normal-padding;
 	background: fade-out($secondaryColour, 0.83);
 	input, .btn, button {
 		margin: 0 -#{$marginMini} 0 0;

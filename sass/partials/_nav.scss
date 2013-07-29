@@ -133,4 +133,5 @@
 .responsive-grid {
 	@extend button;
 	@extend %margin-none;
+	@extend %show-phone;
 }
