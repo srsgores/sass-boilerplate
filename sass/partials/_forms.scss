@@ -2,12 +2,11 @@
 Buttons
 ========================================================================== */
 /* Normal buttons */
-.button, button, .btn, input[type="submit"], a.submit {
-	background: $buttonPrimaryColour;
-	@extend .bordered;
-	@extend .medium;
+button, .btn, input[type="submit"] {
+	@extend %bordered;
+	@extend %medium;
 	@extend %rounded-large;
-	@extend .border-box;
+	@extend %border-box;
 	@extend %transition-all;
 	cursor: pointer;
 	font-weight: $baseFontWeight;
@@ -17,9 +16,9 @@ Buttons
 	text-shadow: 0 1px 0 $inverseTextColour;
 	text-decoration: none;
 	@include background(linear-gradient(lighten($secondaryColour, 30%), $secondaryColour));
-	@include box-shadow(inset 0 1px 0 fade-out($bodyBackground, 0.6), 0 1px 4px fade-out($secondaryColour, 0.5));
+	@include box-shadow(inset 0 1px 0 fade-out($bodyBackground, 0.6), 0 1px 0.3em fade-out($secondaryColour, 0.5));
 
-	&:hover, &:focus, &.loading {
+	&:hover, &:focus {
 		background: $tertiaryColour;
 		border-color: darken($tertiaryColour, 20);
 		color: $inverseTextColour;
@@ -34,9 +33,9 @@ Buttons
 }
 
 /* Button groups */
-.actions, .form-actions, .btn-group, .toolbar {
-	@extend .centred;
-	@extend .bordered-top;
+.form-actions, .btn-group, .toolbar {
+	@extend %centred;
+	@extend %bordered-top;
 	@extend %normal-padding-top-bottom;
 	background: fade-out($secondaryColour, 0.83);
 	input, .btn, button {
@@ -57,14 +56,14 @@ Form inputs
 
 /* Allow inputs to be displayed similarly */
 input, input[type="password"], input[type="search"], isindex {
-	-webkit-appearance: textfield;
-	-moz-appearance: textfield;
-	-o-appearance: textfield;
+	@include appearance("textfield");
 	&[type="search"] {
 		@extend %rounded-large; //large rounded corners for search
 	}
 }
 
 input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
-	@extend .border-box;
+	@extend %border-box;
+	@extend %normal-padding-left-right;
+	@extend %small-padding-top-bottom;
 }

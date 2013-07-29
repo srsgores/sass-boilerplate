@@ -1,25 +1,23 @@
 @import "compass/css3";
-@import "companimation";
-@import "companimation/preset/fade/fadeIn";
+
+$pie-enabled: true; //set pie to true for demo
+
 @import "partials/_variables.scss";
-@import "partials/helpers";
-@import "partials/icomoon/icomoon";
+@import "partials/_helpers";
+@import "partials/_animations";
 @import "breakpoint";
 
-$transitionFunction: ease;
+$icon-quote-left: "\f0fd";
+$icon-quote-right: "\f0fe";
 
 %delayed {
-	@include animation-delay(1.5s);
+	@include animation-delay($transitionTime * 3);
 }
 
 body {
 	@extend %transition-all;
 }
-@for $i from 1 through 10 {
-	%delayed-#{$i} {
-		@include animation-delay(($i * $transitionTime));
-	}
-}
+
 .container {
 	@extend %fadeIn;
 	@extend %delayed-1;
@@ -44,7 +42,7 @@ body {
 }
 
 header {
-	#{headers()} {
+	#{headings(all)} {
 		&:only-child {
 			margin-bottom: 0;
 		}
@@ -54,7 +52,6 @@ section {
 	padding: $paddingLarge 0;
 	@extend %margin-none;
 	&:nth-child(even) {
-		background: $bodyBackgroundImageAlt;
 		color: $inverseTextColour;
 		header {
 			h1 {
@@ -93,7 +90,7 @@ section {
 	font-style: italic;
 	blockquote {
 		font-size: 2em;
-		@extend .centred;
+		@extend %centred;
 		@extend %normal-padding;
 		&:before, &:after {
 			font-family: "icomoon";

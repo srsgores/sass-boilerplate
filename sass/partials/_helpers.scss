@@ -1,11 +1,14 @@
 /**
- * Non-semantic helper classes: please define your styles before this section.
+ * Non-semantic helper classes: please define your styles before this section
  */
 @import "compass/css3/pie";
 @import "compass/css3";
 
+/* =============================================================================
+Visibility Helpers
+========================================================================== */
 /* For image replacement */
-.ir {
+%ir {
 	display: block;
 	text-indent: -99in;
 	overflow: hidden;
@@ -16,18 +19,17 @@
 
 /* Hide for both screenreaders and browsers:
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-.hidden {
+%hidden {
 	display: none;
-	visibility: hidden;
 }
 
-.show-phone {
+%show-phone {
 	display: none;
 }
 
 /* Hide only visually, but have it available for screenreaders: by Jon Neal.
   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
-.visuallyhidden {
+%visuallyhidden {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -37,62 +39,52 @@
 	position: absolute;
 	width: 1px;
 	left: -500%;
-}
-
-@mixin visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	left: -500%;
-}
-
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-	clip: auto;
-	height: auto;
-	margin: 0;
-	overflow: visible;
-	position: static;
-	width: auto;
+	
+	&.focusable {
+		&:active, &:focus { /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+			clip: auto;
+			height: auto;
+			margin: 0;
+			overflow: visible;
+			position: static;
+			width: auto;
+		}
+	}
 }
 
 /* Hide visually and from screenreaders, but maintain layout */
-.invisible {
+%invisible {
 	visibility: hidden;
 }
 
-.visible {
+%visible {
 	visibility: visible;
 }
 /* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
    nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before,
-.clearfix:after {
-	content: "";
-	display: table;
+
+%clearfix {
+	zoom: 1; //for IE
+	&:before, &:after {
+		content: "";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
 }
 
-.clearfix:after {
-	clear: both;
-}
-
-.clearfix {
-	zoom: 1;
-}
-
-.centred {
+%centred {
 	text-align: center;
 }
+
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
 @if $pie-enabled == true {
 	.pie-element {
 		// relative is the default, so passing relative
-		// is redundant, but we do it here for clarity.
+		// is redundant, but we do it here for clarity%
 		@include pie-element(relative);
 	}
 // But sometimes this messes up your positioning
@@ -121,6 +113,7 @@ Overflow
 %overflow-hidden {
 	overflow: hidden;
 }
+
 /* =============================================================================
 Margins
 ========================================================================== */
@@ -192,17 +185,99 @@ Padding
 	padding-left: $padding;
 }
 
+/* Large Padding */
+
+%large-padding {
+	padding: $paddingLarge;
+}
+
+%large-padding-top-bottom {
+	padding: $paddingLarge 0;
+}
+
+%large-padding-left-right {
+	padding: 0 $paddingLarge;
+}
+
+%large-padding-bottom {
+	padding-bottom: $paddingLarge;
+}
+
+%large-padding-right {
+	padding-right: $paddingLarge;
+}
+
+%large-padding-left {
+	padding-left: $paddingLarge;
+}
+
+/* Small Padding */
+
+%small-padding {
+	padding: $paddingSmall;
+}
+
+%small-padding-top-bottom {
+	padding: $paddingSmall 0;
+}
+
+%small-padding-left-right {
+	padding: 0 $paddingSmall;
+}
+
+%small-padding-bottom {
+	padding-bottom: $paddingSmall;
+}
+
+%small-padding-right {
+	padding-right: $paddingSmall;
+}
+
+%small-padding-left {
+	padding-left: $paddingSmall;
+}
+
+/* Mini Padding */
+
+%mini-padding {
+	padding: $paddingMini;
+}
+
+%mini-padding-top-bottom {
+	padding: $paddingMini 0;
+}
+
+%mini-padding-left-right {
+	padding: 0 $paddingMini;
+}
+
+%mini-padding-bottom {
+	padding-bottom: $paddingMini;
+}
+
+%mini-padding-right {
+	padding-right: $paddingMini;
+}
+
+%mini-padding-left {
+	padding-left: $paddingMini;
+}
+
 /* =============================================================================
 Border radius
 ========================================================================== */
 
-/* Normal border radii */
-
-.rounded {
-	@include border-radius($borderRadius);
-	@if $pie-enabled == true {
+//CSS PIE for all rounded corners
+%rounded, %rounded-left, %rounded-right, %rounded-top, %rounded-bottom, %rounded-large, %rounded-left-large, %rounded-right-large, %rounded-bottom-large, %rounded-top-large {
+	@if ($pie-enabled == true) {
 		@extend .pie;
 	}
+}
+
+/* Normal border radii */
+
+%rounded {
+	@include border-radius($borderRadius);
 }
 
 %rounded-left {
@@ -234,9 +309,6 @@ Border radius
 
 %rounded-large {
 	@include border-radius($borderRadiusLarge);
-	@if $pie-enabled == true {
-		@extend .pie;
-	}
 }
 
 %rounded-left-large {
@@ -286,80 +358,86 @@ Border radius
 }
 
 
-.border-box {
+%border-box {
 	@include box-sizing(border-box);
-	*behavior: url(/css/boxsizing.htc); //allow correct box-sizing on IE 6, 7 (will not work on localhost)
-	//also, make sure to add `AddType text/x-component .htc` to apache.config file
+	@if ($pie-enabled == true) {
+		*behavior: url(/css/boxsizing.htc); //allow correct box-sizing on IE 6, 7 (will not work on localhost)
+		//also, make sure to add `AddType text/x-component .htc` to apache.config file
+	}
 }
 
-%transitioned, %transition-all {
+%transition-all {
 	@include transition($transitionTime all $transitionFunction);
 }
 
 /* =============================================================================
 Font Sizes
 ========================================================================== */
-.large {
+%large {
 	font-size: $fontSizeLarge;
 }
 
-.medium {
+%medium {
 	font-size: $fontSizeMedium;
 }
 
-.small {
+%small {
 	font-size: $fontSizeSmall;
 }
 
-.mini {
+%mini {
 	font-size: $fontSizeMini;
 }
 
 /* =============================================================================
 Opacity/visibility
 ========================================================================== */
-.opacity-0 {
+%opacity-0 {
 	@include opacity(0);
 }
 
-.opacity-1 {
+%opacity-05 {
+	@include opacity(0.5);
+}
+
+%opacity-1 {
 	@include opacity(1);
 }
 
 /* =============================================================================
 Borders
 ========================================================================== */
-.bordered {
+%bordered {
 	border: $border;
 }
 
-.bordered-right {
+%bordered-right {
 	border-right: $border;
 }
 
-.bordered-left {
+%bordered-left {
 	border-left: $border;
 }
 
-.bordered-top {
+%bordered-top {
 	border-top: $border;
 }
 
-.border-none {
-	border: 0;
+%bordered-bottom {
+	border-bottom: $border;
 }
 
-.bordered-bottom {
-	border-bottom: $border;
+%border-none {
+	border: 0;
 }
 
 /* =============================================================================
 Floats
 ========================================================================== */
-.pull-left, .float-left {
+%pull-left {
 	float: left;
 }
-.pull-right, .float-right {
+%pull-right {
 	float: right;
 }
 
@@ -388,7 +466,8 @@ Display modes
 %block {
 	display: block;
 }
-.inline { //made into a class for potential markup in CMS
+
+%inline { //made into a class for potential markup in CMS
 	@include inline-block();
 }
 
@@ -397,6 +476,13 @@ Lists
 ========================================================================== */
 %no-list-style {
 	list-style: none;
+}
+
+/* =============================================================================
+Links
+========================================================================== */
+%text-decoration-none {
+	text-decoration: none;
 }
 
 /* =============================================================================

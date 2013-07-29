@@ -1,30 +1,41 @@
-@import "partials/variables.scss";
+/* =============================================================================
+Imports
+========================================================================== */
+/* Base imports */
+@import "compass/utilities";
+@import "partials/_variables.scss";
 @import "partials/_helpers.scss";
-@import "partials/reset.scss";
+@import "partials/_reset.scss";
 @import "compass/css3/pie";
 @import "compass/css3";
 @import "partials/_variables.scss";
 @import "partials/_grids.scss";
 @import "partials/icomoon/_icomoon.scss";
+@import "partials/_mixins.scss";
+
+/* Optional imports */
+@import "partials/_animations"; //animations need to be first because of the delay mixin (if you want to use it)
 @import "partials/_type.scss";
 @import "partials/_forms.scss";
 @import "partials/_nav.scss";
-@import "partials/media-queries";
+@import "partials/_media-queries";
 
+/* =============================================================================
+Main Styles
+========================================================================== */
 body {
 	color: $textColour;
 	background: $bodyBackground;
-	background: $bodyBackgroundImage;
 	line-height: $lineHeight;
 	font-family: $baseFontFamily;
 }
 
 .box {
 	@extend %normal-margin;
-	@extend .border-box;
+	@extend %border-box;
 	@extend %normal-padding;
-	@extend .bordered;
-	@extend .rounded;
+	@extend %bordered;
+	@extend %rounded;
 	@extend %transition-all;
 }
 
@@ -33,26 +44,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 nav, nav li, .toolbar, .toolbar li, .btn-group {
-	@extend .inline;
+	@extend %inline;
 	ul {
 		@extend %margin-none;
 		@extend %padding-none;
 	}
 	input {
-		@extend .inline;
+		@extend %inline;
 	}
 }
 
 /* =============================================================================
 Border Radius
 ========================================================================== */
-nav, button, .btn, pre, code, aside, menu, .nav {
-	@extend .rounded;
+nav, button, .btn, pre, code, aside, menu {
+	@extend %rounded;
 }
 
 header, footer, article, section {
-	@extend .bordered-bottom;
-	@extend .bordered-top;
+	@extend %bordered-bottom;
+	@extend %bordered-top;
 }
 
 /* =============================================================================
@@ -66,5 +77,5 @@ Shadows
 images
 ========================================================================== */
 img, object, embed {
-	max-width: 100%;
+	max-width: $rowWidth; //prevent images from going beyond the viewport
 }

@@ -1,0 +1,9 @@
+@import "companimation";
+@import "companimation/preset/fade/fadeIn";
+@import "companimation/preset/fade/fadeInUp"; //modify to not include all animations
+
+@for $i from 1 through 10 {
+	%delayed-#{$i} {
+		@include animation-delay(($i * $transitionTime));
+	}
+}
