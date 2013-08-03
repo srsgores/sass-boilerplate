@@ -152,6 +152,84 @@ Margins
 	margin: 0 $margin;
 }
 
+/* Large Margin */
+
+%large-margin {
+	margin: $marginLarge;
+}
+
+%large-margin-top-bottom {
+	margin: $marginLarge 0;
+}
+
+%large-margin-left-right {
+	margin: 0 $marginLarge;
+}
+
+%large-margin-bottom {
+	margin-bottom: $marginLarge;
+}
+
+%large-margin-right {
+	margin-right: $marginLarge;
+}
+
+%large-margin-left {
+	margin-left: $marginLarge;
+}
+
+/* Small Margin */
+
+%small-margin {
+	margin: $marginSmall;
+}
+
+%small-margin-top-bottom {
+	margin: $marginSmall 0;
+}
+
+%small-margin-left-right {
+	margin: 0 $marginSmall;
+}
+
+%small-margin-bottom {
+	margin-bottom: $marginSmall;
+}
+
+%small-margin-right {
+	margin-right: $marginSmall;
+}
+
+%small-margin-left {
+	margin-left: $marginSmall;
+}
+
+/* Mini Margin */
+
+%mini-margin {
+	margin: $marginMini;
+}
+
+%mini-margin-top-bottom {
+	margin: $marginMini 0;
+}
+
+%mini-margin-left-right {
+	margin: 0 $marginMini;
+}
+
+%mini-margin-bottom {
+	margin-bottom: $marginMini;
+}
+
+%mini-margin-right {
+	margin-right: $marginMini;
+}
+
+%mini-margin-left {
+	margin-left: $marginMini;
+}
+
 /* =============================================================================
 Padding
 ========================================================================== */

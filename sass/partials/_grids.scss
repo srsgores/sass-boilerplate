@@ -72,7 +72,7 @@
 		@extend %col;
 	}
 
-	.#{$rowNotation} {
+	%#{$rowNotation} {
 		%#{col-name($i)}:last-child {
 			@extend %last !optional;
 			@include span-columns($i omega, $num-cols);
@@ -92,7 +92,7 @@
 .container {
 	@include container;
 	@extend %border-box;
-	.#{$rowNotation} {
+	%#{$rowNotation} {
 		width: $container-width;
 		margin: 0 auto;
 		@extend %overflow-hidden;
@@ -103,10 +103,6 @@
 			@extend %overflow-visible;
 		}
 	}
-}
-
-@for $i from 1 through ($num-cols) {
-
 }
 
 %last {
