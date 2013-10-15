@@ -81,9 +81,9 @@ Colours
 ========================================================================== */
 $textColour: #000 !default;
 $inverseTextColour: invert($textColour) !default;
-$primaryColour: #CCC !default; // colour of text and main colour overall
-$secondaryColour: #0f0f0f !default; // colour of any components, backgrounds, etc.
-$tertiaryColour: #7c7c7c !default; //special colour to complement secondary colour
+$primaryColour: lighten($textColour, 45) !default; // colour of text and main colour overall
+$secondaryColour: lighten($textColour, 55) !default; // colour of any components, backgrounds, etc.
+$tertiaryColour: lighten($textColour, 65) !default; //special colour to complement secondary colour
 //background colour.  Should be the opposite of primary colour for good results
 $bodyBackground: $inverseTextColour !default;
 
