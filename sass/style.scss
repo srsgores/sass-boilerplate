@@ -24,8 +24,8 @@ Imports
 Main Styles
 ========================================================================== */
 body {
-	color: $textColour;
-	background: $bodyBackground;
+	@extend %textColour;
+	@extend %bodyBackgroundColour;
 	line-height: $lineHeight;
 	font-family: $baseFontFamily;
 }

@@ -5,6 +5,49 @@
 @import "compass/css3";
 
 /* =============================================================================
+Colour helpers
+========================================================================== */
+
+/* Background colours */
+
+%primaryColour {
+	background: $primaryColour;
+}
+
+%secondaryColour {
+	background: $secondaryColour;
+}
+
+%tertiaryColour {
+	background: $tertiaryColour;
+}
+
+%bodyBackgroundColour {
+	background: $bodyBackground;
+}
+/* Text Colours */
+
+%textColour {
+	color: $textColour;
+}
+
+%inverseTextColour {
+	color: $inverseTextColour;
+}
+
+%textPrimaryColour {
+	color: $primaryColour;
+}
+
+%textSecondaryColour {
+	color: $secondaryColour;
+}
+
+%textTertiaryColour {
+	color: $tertiaryColour;
+}
+
+/* =============================================================================
 Visibility Helpers
 ========================================================================== */
 /* For image replacement */
@@ -465,6 +508,17 @@ Font Sizes
 
 %mini {
 	font-size: $fontSizeMini;
+}
+
+/* =============================================================================
+Font families
+========================================================================== */
+%baseFontFamily {
+	font-family: $baseFontFamily;
+}
+
+%baseFontSize {
+	font-size: $em;
 }
 
 /* =============================================================================

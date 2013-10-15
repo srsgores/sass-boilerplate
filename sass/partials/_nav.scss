@@ -1,4 +1,4 @@
-@import "compass/css3";
+ @import "compass/css3";
 @import "variables.scss";
 @import "helpers";
 
@@ -18,13 +18,13 @@
 	ul {
 		//normal menu styling here
 		a {
-			color: $inverseTextColour;
-			@extend %medium;
-			border-right: 1px solid darken($secondaryColour, 25);
+			@extend %inverseTextColour;
+			//@extend %medium;
+			border-right: $borderWidth $borderStyle darken($secondaryColour, 25);
 			@extend %inline;
 			padding: $paddingSmall $paddingLarge;
 			text-decoration: none;
-			text-shadow: 0 1px $paddingSmall $textColour;
+			@include text-shadow(0 1px 0.4em $textColour);
 
 			&:hover {
 				@include background(linear-gradient(lighten($tertiaryColour, 30), $tertiaryColour));
@@ -132,6 +132,11 @@
 //responsive button
 .responsive-grid {
 	@extend button;
+	@include text-shadow(none);
 	@extend %margin-none;
 	@extend %show-phone;
+}
+
+.toggle-nav {
+	@extend %visuallyhidden;
 }

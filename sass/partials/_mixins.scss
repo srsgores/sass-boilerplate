@@ -12,3 +12,33 @@ Visibility Mixins
 	width: 1px;
 	left: -500%;
 }
+
+/* =============================================================================
+Type
+========================================================================== */
+@mixin text-size-adjust($value) {
+	@include experimental(text-size-adjust, $value,
+		-moz, -webkit, not -o, -ms, not -khtml, official
+	);
+}
+
+/* =============================================================================
+Forms
+========================================================================== */
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+		@content;
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+}

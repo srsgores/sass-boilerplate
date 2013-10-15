@@ -13,11 +13,20 @@
 
 a {
 	@extend %transition-all;
-	color: $inverseTextColour;
+	@extend %inverseTextColour;
 	&:visited {
 		color: darken($textColour, 30);
 	}
-	text-decoration: none;
+	&[link] {
+		text-decoration: none;
+	}
+	&[target="_blank"] {
+		&:after {
+			font-family: "icomoon";
+			content: $icon-external-link;
+			@extend %mini-margin-left;
+		}
+	}
 }
 
 ul, ol, dl {

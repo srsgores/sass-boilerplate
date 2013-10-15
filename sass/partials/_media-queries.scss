@@ -8,13 +8,12 @@
 	body {
 		background: transparent !important;
 		color: black !important;
-		text-shadow: none !important;
-		filter: none !important;
-		-ms-filter: none !important;
+		@include text-shadow(none);
+		@include filter(none);
 	}
 /* Black prints faster: sanbeiji.com/archives/953 */
 	a, a:visited {
-		color: #444 !important;
+		color: $textColour !important;
 		text-decoration: underline;
 	}
 	a[href]:after {
@@ -28,7 +27,7 @@
 	}
 /* Don't show links for images, or javascript/internal links */
 	pre, blockquote {
-		border: 1px solid #999;
+		border: $borderWidth $borderStyle $borderColour;
 		page-break-inside: avoid;
 	}
 	thead {
@@ -62,7 +61,7 @@ Mobile main media query
 	/* Ensure no increased font sizes */
 	body {
 		font-size: $baseFontSize;
-		-webkit-text-size-adjust: none;
+		@include text-size-adjust(none);
 	}
 	/* Responsive grids */
 	.#{$rowNotation}, body, .container, .button, button, .btn, input[type="submit"], a.submit, textarea, input, img, .actions, .form-actions, .btn-group, .toolbar, .nav ul li {
@@ -130,7 +129,7 @@ Mobile main media query
 			ul, ul ul {
 				@include opacity(1);
 				visibility: visible;
-				font-size: $fontSizeSmall;
+				//font-size: $fontSizeSmall;
 				display: block;
 				position: static;
 				margin: 0;
@@ -145,7 +144,7 @@ Mobile main media query
 	}
 
 	//forms at full screen width
-	input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+	input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], textarea {
 		width: $rowWidth;
 	}
 }
