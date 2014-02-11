@@ -5,7 +5,6 @@ Imports
 @import "compass/utilities";
 @import "partials/_variables.scss";
 @import "partials/_helpers.scss";
-@import "partials/_reset.scss";
 @import "compass/css3/pie";
 @import "compass/css3";
 @import "partials/_variables.scss";
@@ -28,6 +27,7 @@ body {
 	@extend %bodyBackgroundColour;
 	line-height: $lineHeight;
 	font-family: $baseFontFamily;
+	@extend %margin-none;
 }
 
 .box {
@@ -35,43 +35,9 @@ body {
 	@extend %border-box;
 	@extend %normal-padding;
 	@extend %bordered;
-	@extend %rounded;
 	@extend %transition-all;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video, %normal-margin-bottom {
-	@extend %normal-margin-bottom; //spaced only at bottom by default
-}
-
-nav, nav li, .toolbar, .toolbar li, .btn-group {
-	@extend %inline;
-	ul {
-		@extend %margin-none;
-		@extend %padding-none;
-	}
-	input {
-		@extend %inline;
-	}
-}
-
-/* =============================================================================
-Border Radius
-========================================================================== */
-nav, button, .btn, pre, code, aside, menu {
-	@extend %rounded;
-}
-
-header, footer, article, section {
-	@extend %bordered-bottom;
-	@extend %bordered-top;
-}
-
-/* =============================================================================
-Shadows
-========================================================================== */
-.shadowed {
-	@include box-shadow(inset 0 0 3em fade-out($textColour, 0.7));
-}
 
 /* =============================================================================
 images

@@ -51,8 +51,6 @@ $from-direction: left;
 
 $container-style: fluid;
 
-//Turn off media-query fallback output for non-IE stylesheets.
-$breakpoint-ie-output: true;
 /* =============================================================================
 Type
 ========================================================================== */
@@ -101,7 +99,4 @@ $border: $borderWidth $borderStyle $borderColour;
 /* =============================================================================
 Media query variables
 ========================================================================== */
-$breakpointMain: (screen) (max-width 767px);
-$queryIphone3: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
-$queryIphone3Portrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
-$queryIphone3Landscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);
+$breakpointMain: 767px;

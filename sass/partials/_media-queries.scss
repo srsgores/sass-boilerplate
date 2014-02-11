@@ -57,7 +57,7 @@
 Mobile main media query
 ========================================================================== */
 
-@include breakpoint($breakpointMain) {
+@media screen and (max-width: $breakpointMain) {
 	/* Ensure no increased font sizes */
 	body {
 		font-size: $baseFontSize;

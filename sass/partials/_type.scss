@@ -8,28 +8,10 @@
 @for $i from 1 through 6 {
 	h#{$i} {
 		font-size: (($em * $multiplierLarge) - (($i * (($em * $multiplierLarge) / 6 )))) + ($em * $multiplier);
+		@extend %normal-margin-bottom;
 	}
 }
 
 a {
 	@extend %transition-all;
-	@extend %inverseTextColour;
-	&:visited {
-		color: darken($textColour, 30);
-	}
-	&[link] {
-		text-decoration: none;
-	}
-	&[target="_blank"] {
-		&:after {
-			font-family: "icomoon";
-			content: $icon-external-link;
-			@extend %mini-margin-left;
-		}
-	}
-}
-
-ul, ol, dl {
-	padding-left: ($paddingLarge * $multiplier);
-	@extend %normal-margin-top-bottom;
 }
