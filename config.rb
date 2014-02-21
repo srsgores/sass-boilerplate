@@ -7,7 +7,7 @@ http_path = "/"
 css_dir = "css"
 sass_dir = "sass"
 images_dir = "img"
-javascripts_dir = "js"
+javascripts_dir = "scripts"
 fonts_dir = "fonts"
 
 output_style = :compressed

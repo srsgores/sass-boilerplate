@@ -1,25 +1,22 @@
- @import "compass/css3";
 @import "variables.scss";
 @import "helpers";
 
-.nav, .nav ul {
-	@extend %margin-none;
-	@extend %padding-none;
-	@extend %no-list-style;
-}
-
-.nav {
+nav {
 	background: darken($tertiaryColour, 15);
 	border-bottom: $borderWidth $borderStyle darken($borderColour, 15%);
-	overflow: visible;
+	@extend %overflow-visible;
 	@extend %row-width;
+	@extend %margin-none;
+	@extend %padding-none;
 
 	@include background(linear-gradient($tertiaryColour, darken($tertiaryColour, 30)));
 	ul {
+		@extend %no-list-style;
+		@extend %margin-none;
+		@extend %padding-none;
 		//normal menu styling here
 		a {
 			@extend %inverseTextColour;
-			//@extend %medium;
 			border-right: $borderWidth $borderStyle darken($secondaryColour, 25);
 			@extend %inline;
 			padding: $paddingSmall $paddingLarge;
@@ -89,7 +86,6 @@
 
 				&:first-child {
 					a {
-						@extend %rounded-top;
 						&:hover {
 							&:after {
 								border-bottom-color: lighten($tertiaryColour, 30);

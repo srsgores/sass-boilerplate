@@ -64,7 +64,7 @@ Mobile main media query
 		@include text-size-adjust(none);
 	}
 	/* Responsive grids */
-	.#{$rowNotation}, body, .container, .button, button, .btn, input[type="submit"], a.submit, textarea, input, img, .actions, .form-actions, .btn-group, .toolbar, .nav ul li {
+	.#{$rowNotation}, body, .container, button, textarea, input, img, nav ul li {
 		width: 100%;
 		min-width: 0;
 		margin-left: 0;
@@ -84,10 +84,7 @@ Mobile main media query
 			}
 		}
 	}
-	header {
-		overflow: visible;
-	}
-	.toolbar, .form-actions, header, footer, caption, menu, figure, figcaption, nav, .button, button, .btn, input[type="submit"], a.submit {
+	header, footer, caption, menu, figure, figcaption, nav, button {
 		text-align: center;
 	}
 	textarea, input {
@@ -96,26 +93,18 @@ Mobile main media query
 	.hidden-phone {
 		display: none;
 	}
-	.container .show-phone, .button, button, .btn, input[type="submit"], a.submit {
+	.container .show-phone, button {
 		display: block;
 	}
-	/* Responsive buttons */
-	.actions, .form-actions, .btn-group, .toolbar {
-		.button, button, .btn, input[type="submit"], a.submit {
-			&:first-child {
-				@include border-top-radius($borderRadiusLarge);
-				@include border-bottom-radius(0);
-			}
-			&:last-child {
-				@include border-top-radius(0);
-				@include border-bottom-radius($borderRadiusLarge);
-			}
+	/* Responsive buttons - vertically-stacked */
+	.form-actions {
+		button {
 			margin: -#{$marginMini} 0 0 0; //buttons don't show double borders
 		}
 	}
 
 	/* Responsive navigation */
-	.nav ul {
+	nav ul {
 		li {
 			a {
 				display: block;
@@ -129,7 +118,6 @@ Mobile main media query
 			ul, ul ul {
 				@include opacity(1);
 				visibility: visible;
-				//font-size: $fontSizeSmall;
 				display: block;
 				position: static;
 				margin: 0;

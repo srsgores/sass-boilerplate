@@ -126,18 +126,13 @@ CSS3 PIE
 ========================================================================== */
 @if $pie-enabled == true {
 	.pie-element {
-		// relative is the default, so passing relative
-		// is redundant, but we do it here for clarity%
+		/* relative is the default, so passing relative is redundant, but we do it here for clarity */
 		@include pie-element(relative);
 	}
-// But sometimes this messes up your positioning
-// So you can also use z-indexing. In this case
-// an ancestor element before or having the first
-// opaque background should be marked as a pie-container
-// which gives it a z-index of 0 (actually any z-index
-// can be provided to the pie-container mixin).
-// And then the pie element itself should be given
-// a z-index of -1.
+	/* But sometimes this messes up your positioning, so you can also use z-indexing. In this case
+	an ancestor element before or having the first opaque background should be marked as a pie-container
+	which gives it a z-index of 0 (actually any z-index can be provided to the pie-container mixin).
+	And then the pie element itself should be given a z-index of -1. */
 	.pie-container {
 		@include pie-container;
 	}

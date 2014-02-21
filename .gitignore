@@ -166,12 +166,6 @@ pip-log.txt
 
 node_modules
 js/components
-sass/imports/grids.css
-sass/imports/loaders.css
-sass/imports/media-queries.css
-sass/imports/menu.css
-sass/imports/mixins.css
-sass/imports/variables.css
+sass/*.css
 .sass-cache
-
-codekit-config.json
+bower_components
