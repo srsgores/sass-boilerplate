@@ -1,58 +1,15 @@
-@import "compass/css3";
+$lineHeight: 1.6;
+
+@import "style.scss";
 
 $pie-enabled: true; //set pie to true for demo
-$grid-padding: 10%;
-@import "partials/_variables.scss";
-@import "partials/_helpers";
-@import "partials/_animations";
-@import "breakpoint";
-
-$icon-quote-left: "\f0fd";
-$icon-quote-right: "\f0fe";
-
-%delayed {
-	@include animation-delay($transitionTime * 3);
-}
 
 body {
 	@extend %transition-all;
 }
 
 .container {
-	@extend %fadeIn;
-	@extend %delayed-1;
-
-	header, .responsive-grid {
-		@extend %fadeIn;
-		@extend %delayed-2;
-		@include animation-duration(2s);
-	}
-
-	#content {
-		@extend %fadeIn;
-		@extend %delayed-3;
-		@include animation-duration(2.5s);
-	}
-
-	.box {
-		@extend %fadeIn;
-		@extend %delayed-1;
-		@include animation-duration(2.5s);
-	}
-}
-
-header {
-	#{headings(all)} {
-		&:only-child {
-			margin-bottom: 0;
-		}
-	}
-}
-section {
-	padding: 3em 0;
-	@extend %margin-none;
-	&:nth-child(even) {
-	}
+	@extend %fadeInUp;
 }
 
 .feature-icon {
@@ -60,70 +17,55 @@ section {
 }
 
 .overview {
+	padding: 15% 0;
 	h1 {
-		@extend %margin-none;
-		padding: 3em 0;
-	}
-	h2 {
-		font-size: 2.3em;
-	}
-	.toolbar {
-		@extend %row-width;
-		@extend %border-box;
-		background: none;
-		@extend %normal-padding;
-		@include breakpoint($breakpointMain) {
-			margin-top: $margin;
-		}
+		font-size: 3em;
+		text-transform: uppercase;
+		@extend %small-padding-bottom;
 	}
 }
 
+section {
+	@extend %bordered-bottom;
+}
+
+#social-media-buttons {
+	background: transparent;
+	@extend %normal-margin-top;
+}
 #brief-description {
 	padding: 3em;
 	font-style: italic;
-	blockquote {
-		font-size: 2em;
-		@extend %centred;
-		@extend %normal-padding;
-		&:before, &:after {
-			font-family: "icomoon";
-			font-size: 4em;
-		}
-		&:before {
-			content: $icon-quote-left;
-		}
-		&:after {
-			content: $icon-quote-right;
-		}
-	}
-}
-
-@import "partials/grids";
-
-@for $i from 1 through ($num-cols) {
-	.#{$rowNotation} {
-		.#{col-name($i)} {
-			@if $i == $num-cols {
-				@include span-columns($i omega, $num-cols);
-			}
-			@else {
-				@include span-columns($i, $num-cols);
-			}
-		}
-	}
-	.#{col-name($i)} {
-		@extend %col;
-		&:last-child {
-			@extend %last !optional;
-			@include span-columns($i omega, $num-cols);
-		}
-	}
-}
-
-.toggle-nav {
-	@extend %visuallyhidden;
+	font-size: 1.5em;
 }
 
 .centred {
 	@extend %centred;
+}
+
+.btn {
+	@extend button;
+}
+
+@media screen and (min-width: $breakpoint1080p) {
+	body {
+		font-size: 110%;
+	}
+}
+
+/* =============================================================================
+Grid business
+========================================================================== */
+.#{$rowNotation} {
+	@extend %#{$rowNotation};
+	padding: 1% 5%;
+}
+@for $i from 1 through ($num-cols) {
+	.#{col-name($i)} {
+		@extend %#{col-name($i)};
+	}
+}
+
+%col {
+	@extend %normal-padding;
 }

@@ -7,11 +7,25 @@
 
 @for $i from 1 through 6 {
 	h#{$i} {
-		font-size: (($em * $multiplierLarge) - (($i * (($em * $multiplierLarge) / 6 )))) + ($em * $multiplier);
+		font-size: (($em / $i) * $multiplier) + ($em / $multiplier);
 		@extend %normal-margin-bottom;
 	}
 }
 
 a {
 	@extend %transition-all;
+}
+
+hr {
+	@extend %content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code, kbd, pre, samp {
+	font-family: monospace, monospace;
+	font-size: $em;
 }

@@ -81,7 +81,7 @@ $textColour: #000 !default;
 $inverseTextColour: invert($textColour) !default;
 $primaryColour: lighten($textColour, 45) !default; // colour of text and main colour overall
 $secondaryColour: lighten($textColour, 55) !default; // colour of any components, backgrounds, etc.
-$tertiaryColour: lighten($textColour, 65) !default; //special colour to complement secondary colour
+$tertiaryColour: lighten($textColour, 96) !default; //special colour to complement secondary colour
 //background colour.  Should be the opposite of primary colour for good results
 $bodyBackground: $inverseTextColour !default;
 
@@ -100,3 +100,4 @@ $border: $borderWidth $borderStyle $borderColour;
 Media query variables
 ========================================================================== */
 $breakpointMain: 767px;
+$breakpoint1080p: 1920px;

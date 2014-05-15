@@ -7,13 +7,3 @@
 		@include animation-delay(($i * $transitionTime));
 	}
 }
-
-p {
-	@extend %delayed-2;
-	@extend %fadeInUp;
-}
-
-#{headings()} {
-	@extend %delayed-1;
-	@extend %fadeInUp;
-}

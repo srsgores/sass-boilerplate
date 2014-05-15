@@ -1,0 +1,13 @@
+.toolbar {
+	@extend %centred, %border-box, %normal-padding;
+	background: fade-out($secondaryColour, 0.9);
+	button {
+		margin: 0 -#{$marginMini} 0 0;
+	}
+	@media screen and (max-width: $breakpointMain) {
+		text-align: center;
+		button {
+			margin: -#{$borderWidth} 0 0 0; //prevent double borders
+		}
+	}
+}

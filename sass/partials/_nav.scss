@@ -1,30 +1,32 @@
-@import "variables.scss";
-@import "helpers";
-
 nav {
 	background: darken($tertiaryColour, 15);
+	@extend %bordered-bottom;
 	border-bottom: $borderWidth $borderStyle darken($borderColour, 15%);
-	@extend %overflow-visible;
 	@extend %row-width;
 	@extend %margin-none;
 	@extend %padding-none;
-
-	@include background(linear-gradient($tertiaryColour, darken($tertiaryColour, 30)));
 	ul {
 		@extend %no-list-style;
 		@extend %margin-none;
 		@extend %padding-none;
+		@include background(linear-gradient($bodyBackground, $tertiaryColour));
+		padding: 0;
 		//normal menu styling here
 		a {
-			@extend %inverseTextColour;
-			border-right: $borderWidth $borderStyle darken($secondaryColour, 25);
+			@extend %textColour;
+			@extend %border-box;
+			@extend %bordered-right;
 			@extend %inline;
-			padding: $paddingSmall $paddingLarge;
-			text-decoration: none;
-			@include text-shadow(0 1px 0.4em $textColour);
-
+			padding: $paddingSmall $padding;
+			@extend %text-decoration-none;
+			@include text-shadow(0 1px $inverseTextColour);
+			margin-right: -#{$marginMini};
+			&:active, &.active {
+				background: $tertiaryColour;
+				@include box-shadow(inset 0 0 1.1em -0.4em darken($tertiaryColour, 15));
+			}
 			&:hover {
-				@include background(linear-gradient(lighten($tertiaryColour, 30), $tertiaryColour));
+				background: ($tertiaryColour - 15);
 			}
 		}
 		ul {
@@ -33,75 +35,29 @@ nav {
 			@extend %opacity-0;
 			@extend %invisible;
 			@extend %absolute;
-			z-index: 9;
+			@extend %bordered;
+			@extend %padding-none;
+			z-index: 3;
 			top: 100%;
-			@extend %normal-margin-left;
-			background: darken($tertiaryColour, 20);
 			@include transition(opacity $transitionTime $transitionFunction);
-			@include box-shadow(0 0 $paddingSmall fade-out($bodyBackground, 0.5));
 
 			ul {
 				//nested menu 2
 				left: 100%;
 				top: 0;
 				z-index: 10;
-				li {
-					&:first-child {
-						a {
-							&:after {
-								left: -0.4em;
-								top: $em * 0.8;
-								width: 0;
-								height: 0;
-								border-left: 0;
-								border-bottom: $borderRadius solid transparent;
-								border-top: $borderRadius solid transparent;
-								border-right: $borderRadiusLarge solid darken($secondaryColour, 40);
-							}
-
-							&:hover {
-								&:after {
-									border-right-color: lighten($tertiaryColour, 40);
-									border-bottom-color: transparent;
-								}
-							}
-						}
-					}
-					&:last-child {
-						a {
-							border-right-color: lighten($tertiaryColour, 40);
-							border-bottom-color: transparent;
-						}
-					}
-				}
 			}
 			li {
+				a {
+					border-right: 0;
+					@extend %bordered-bottom;
+					white-space: nowrap;
+					margin: 0;
+				}
 				&:hover {
 					> ul {
 						@extend %opacity-1;
 						@extend %visible;
-						@extend %margin-none;
-					}
-				}
-
-				&:first-child {
-					a {
-						&:hover {
-							&:after {
-								border-bottom-color: lighten($tertiaryColour, 30);
-							}
-						}
-						&:after {
-							content: "";
-							@extend %absolute;
-							left: $marginLarge;
-							top: -0.4em;
-							width: 0;
-							height: 0;
-							border-left: ($borderWidth * $multiplier) $borderStyle transparent;
-							border-right: ($borderWidth * $multiplier) $borderStyle transparent;
-							border-bottom: ($borderWidth * $multiplierLarge) $borderStyle darken($secondaryColour, 15);
-						}
 					}
 				}
 			}
@@ -110,14 +66,10 @@ nav {
 			@extend %inline;
 			@extend %relative;
 			&:hover {
-				a {
-					color: darken($inverseTextColour, 10);
-				}
 				> ul {
 					@extend %block;
 					@extend %opacity-1;
 					@extend %visible;
-					@extend %margin-none;
 				}
 			}
 		}

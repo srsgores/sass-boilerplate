@@ -473,13 +473,16 @@ Border radius
 	@include border-bottom-right-radius(0);
 }
 
-
 %border-box {
 	@include box-sizing(border-box);
 	@if ($pie-enabled == true) {
 		*behavior: url(/css/boxsizing.htc); //allow correct box-sizing on IE 6, 7 (will not work on localhost)
 		//also, make sure to add `AddType text/x-component .htc` to apache.config file
 	}
+}
+
+%content-box {
+	@include box-sizing(content-box);
 }
 
 %transition-all {
@@ -564,6 +567,7 @@ Floats
 %pull-left {
 	float: left;
 }
+
 %pull-right {
 	float: right;
 }

@@ -64,7 +64,7 @@ Mobile main media query
 		@include text-size-adjust(none);
 	}
 	/* Responsive grids */
-	.#{$rowNotation}, body, .container, button, textarea, input, img, nav ul li {
+	%#{$rowNotation}, body, .container, button, textarea, input, img, nav ul li {
 		width: 100%;
 		min-width: 0;
 		margin-left: 0;
@@ -73,8 +73,8 @@ Mobile main media query
 	.container {
 		padding: 0 $padding; //allow padding to the side of the container
 		@for $i from 1 through $num-cols {
-			.#{$rowNotation} {
-				.#{col-name($i)}, .#{col-name($i)}:last-child {
+			%#{$rowNotation} {
+				%#{col-name($i)}, %#{col-name($i)}:last-child {
 					width: auto;
 					float: none;
 					position: static !important;
@@ -84,17 +84,14 @@ Mobile main media query
 			}
 		}
 	}
-	header, footer, caption, menu, figure, figcaption, nav, button {
-		text-align: center;
-	}
-	textarea, input {
-		padding: $paddingSmall $padding;
-	}
-	.hidden-phone {
+	%hidden-phone {
 		display: none;
 	}
-	.container .show-phone, button {
+	.container %show-phone, button {
 		display: block;
+	}
+	button {
+		text-align: center;
 	}
 	/* Responsive buttons - vertically-stacked */
 	.form-actions {
@@ -104,16 +101,17 @@ Mobile main media query
 	}
 
 	/* Responsive navigation */
+	nav {
+		border: $borderWidth $borderStyle $borderColour;
+	}
 	nav ul {
 		li {
 			a {
 				display: block;
 				border-right: none;
 				border-left: none;
-				border-bottom: $borderWidth $borderStyle darken($secondaryColour, 25);
-			}
-			&:last-child a {
-				border-bottom: none;
+				border-bottom: $borderWidth $borderStyle $borderColour;
+				margin: 0;
 			}
 			ul, ul ul {
 				@include opacity(1);
@@ -121,6 +119,11 @@ Mobile main media query
 				display: block;
 				position: static;
 				margin: 0;
+				border: 0;
+				font-size: 85%;
+				a {
+					text-indent: 3%;
+				}
 			}
 		}
 	}

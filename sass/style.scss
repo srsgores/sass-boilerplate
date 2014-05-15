@@ -16,6 +16,7 @@ Imports
 @import "partials/_animations"; //animations need to be first because of the delay mixin (if you want to use it)
 @import "partials/_type.scss";
 @import "partials/_forms.scss";
+@import "partials/addons/_toolbar.scss";
 @import "partials/_nav.scss";
 @import "partials/_media-queries";
 
@@ -27,7 +28,9 @@ body {
 	@extend %bodyBackgroundColour;
 	line-height: $lineHeight;
 	font-family: $baseFontFamily;
+	font-size: $baseFontSize;
 	@extend %margin-none;
+	@include text-size-adjust(100%);
 }
 
 .box {
@@ -44,4 +47,5 @@ images
 ========================================================================== */
 img, object, embed {
 	max-width: $rowWidth; //prevent images from going beyond the viewport
+	@extend %border-none;
 }
