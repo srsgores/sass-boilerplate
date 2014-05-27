@@ -1,6 +1,6 @@
 {
 	"name":         "sassboilerplate",
-	"version":      "1.6.0",
+	"version":      "1.6.1",
 	"main":         "sass/style.scss",
 	"dependencies": {
 		"jquery":              "~*",
@@ -22,6 +22,7 @@
 		"humans.txt",
 		"robots.txt",
 		"tile.png",
+		"crossdomain.xml",
 		"demo.scss",
 		"tile-wide.png",
 		"node_modules",
