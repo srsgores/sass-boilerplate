@@ -1,6 +1,6 @@
 {
 	"name":         "sassboilerplate",
-	"version":      "1.6.1",
+	"version":      "1.6.1.2",
 	"main":         "sass/style.scss",
 	"dependencies": {
 		"jquery":              "~*",
@@ -24,6 +24,7 @@
 		"tile.png",
 		"crossdomain.xml",
 		"demo.scss",
+		"demo.css",
 		"tile-wide.png",
 		"node_modules",
 		"bower_components"
