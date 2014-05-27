@@ -1,5 +1,5 @@
 {
-	"name":         "scss-boilerplate",
+	"name":         "sassboilerplate",
 	"version":      "1.6.0",
 	"main":         "sass/style.scss",
 	"dependencies": {
