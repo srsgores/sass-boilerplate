@@ -1,6 +1,6 @@
 {
 	"name":         "sassboilerplate",
-	"version":      "1.6.1.2",
+	"version":      "1.6.2",
 	"main":         "sass/style.scss",
 	"dependencies": {
 		"jquery":              "~*",
