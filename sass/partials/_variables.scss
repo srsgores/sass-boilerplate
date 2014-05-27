@@ -5,7 +5,7 @@
 CSS3 PIE
 ========================================================================== */
 $pie-enabled: false !default;
-$pie-behavior: url("/css/PIE.htc");
+$pie-behavior: url("/bower_components/css3pie/PIE.htc");
 $pie-base-class: pie-element;
 
 $multiplier: 1.3 !default;

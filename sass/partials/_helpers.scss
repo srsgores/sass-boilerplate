@@ -476,7 +476,7 @@ Border radius
 %border-box {
 	@include box-sizing(border-box);
 	@if ($pie-enabled == true) {
-		*behavior: url(/css/boxsizing.htc); //allow correct box-sizing on IE 6, 7 (will not work on localhost)
+		*behavior: url(/bower_components/box-sizing-polyfill/boxsizing.htc); //allow correct box-sizing on IE 6, 7 (will not work on localhost)
 		//also, make sure to add `AddType text/x-component .htc` to apache.config file
 	}
 }

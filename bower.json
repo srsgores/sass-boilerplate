@@ -1,14 +1,30 @@
 {
-	"name": "sass-boilerplate",
-	"version": "1.4.0",
-	"main": "index.html",
+	"name":         "scss-boilerplate",
+	"version":      "1.6.0",
+	"main":         "sass/style.scss",
 	"dependencies": {
-		"jquery": "~*",
-		"modernizr": "~*"
+		"jquery":              "~*",
+		"css3pie":             "*",
+		"box-sizing-polyfill": "*",
+		"html5shiv":           "*"
 	},
-	"ignore": [
+	"ignore":       [
 		"**/.*",
+		".idea",
+		".sass-cache",
+		"scripts",
+		".bowerrc",
+		".htaccess",
+		"apple-touch-icon-precomposed.png",
+		"browserconfig.xml",
+		"**/*.html",
+		"favicon.ico",
+		"humans.txt",
+		"robots.txt",
+		"tile.png",
+		"demo.scss",
+		"tile-wide.png",
 		"node_modules",
-		"js/components"
+		"bower_components"
 	]
 }
