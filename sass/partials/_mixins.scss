@@ -1,7 +1,8 @@
 /* =============================================================================
 Visibility Mixins
 ========================================================================== */
-@mixin visuallyhidden { //useful for within a media query
+@mixin visuallyhidden {
+	//useful for within a media query
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -18,7 +19,7 @@ Type
 ========================================================================== */
 @mixin text-size-adjust($value) {
 	@include experimental(text-size-adjust, $value,
-		-moz, -webkit, not -o, -ms, not -khtml, official
+			-moz, -webkit, not -o, -ms, not -khtml, official
 	);
 }
 
@@ -30,15 +31,48 @@ Forms
 		@content;
 	}
 
-	&:-moz-placeholder { /* Firefox 18- */
+	&:-moz-placeholder {
+		/* Firefox 18- */
 		@content;
 	}
 
-	&::-moz-placeholder {  /* Firefox 19+ */
+	&::-moz-placeholder {
+		/* Firefox 19+ */
 		@content;
 	}
 
 	&:-ms-input-placeholder {
 		@content;
+	}
+}
+
+/* =============================================================================
+Font Feature Settings Mixin
+========================================================================== */
+// Use this for openType experimentation (http://demosthenes.info/blog/575/Elegant-Table-Data-With-OpenType)
+// Adapted from https://github.com/bitmanic/font-feature-settings
+
+@mixin font-feature-settings($feature-list: false) {
+	// Only proceed if a list of arguments was passed
+	@if $feature-list {
+		// Create an empty list for the standard syntax
+		$standard: ();
+
+		// Create an empty list for the old Mozilla syntax
+		$old-moz: ();
+
+		// Add each listed feature to the standard and old Mozilla values
+		@each $feature in $feature-list {
+			$standard: append($standard, "#{$feature}" 1, comma);
+			$old-moz: append($old-moz, "#{$feature}=1", comma);
+		}
+
+		// Finally, print out the prefixed and non-prefixed code for all of the listed features
+		-moz-font-feature-settings: $old-moz;
+		-moz-font-feature-settings: $standard;
+		-ms-font-feature-settings: $standard;
+		-o-font-feature-settings: $standard;
+		-webkit-font-feature-settings: $standard;
+		font-feature-settings: $standard;
 	}
 }
