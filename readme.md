@@ -16,7 +16,7 @@ Choose one of the following options:
 1. Use the [yeoman generator](https://github.com/srsgores/generator-sass-boilerplate)
 2. (**New!**) Install using [bower](http://bower.io") - `bower install sassboilerplate`
 3. Clone the git repo — `git clone
-   https://github.com/srsgores/sass-boilerplate-boilerplate.git` - and checkout the [tagged
+   https://github.com/srsgores/sass-boilerplate.git` - and checkout the [tagged
    release](https://github.com/srsgores/SASS-boilerplate/releases) you'd like to
    use.
 
